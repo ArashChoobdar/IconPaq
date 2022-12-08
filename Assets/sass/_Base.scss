@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Barlow";
+  src: url('../fonts/Barlow-Regular.otf'),
+    url('../fonts/Barlow-Medium.otf') format('otf'),
+    url('../fonts/Barlow-Light.otf') format('otf'),
+    url('../fonts/Barlow-Extra\ Bold.ttf') format('ttf'),
+    url('../fonts/Barlow-Bold.otf') format('otf');
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url('../fonts/Outfit-Regular.woff'),
+    url('../fonts/Outfit-Medium.woff') format('woff'),
+    url('../fonts/Outfit-Light.woff') format('woff'),
+    url('../fonts/Outfit-ExtraBold.woff') format('woff'),
+    url('../fonts/Outfit-Bold.woff') format('woff');
+}
+
+// @import "Theme_Light";
+// @import "Theme_Dark";
+
+$Purple: #685AD3;
+$Black: #000;
+
+body {
+  font-family: "Barlow" !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none !important;
+}

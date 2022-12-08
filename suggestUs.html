@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iconpaq</title>
+  <!-- // Bootstrap CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <!-- // Custom Style -->
+  <link rel="stylesheet" href="Assets/css/SuggestUs_Light.css" />
+</head>
+
+<body>
+  <div class="container-fluid p-0" id="Container">
+    <header class="navbar navbar-expand-lg justify-content-between">
+      <a class="navbar-brand" href="#">
+        <img src="./Assets/img/logo.png" width="120" height="35px" class="d-inline-block align-top" alt="Iconpaq" />
+        <!-- Name Your Brand -->
+      </a>
+
+      <div class="d-flex justify-content-between">
+        <div class="d-flex align-items-center justify-content-center p-2 SocialMediaIcon_Navbar ">
+          <p class="m-0 mr-2">GitHub</p>
+          <i class="fa fa-github"></i>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center p-2 SocialMediaIcon_Navbar">
+          <p class="m-0 mr-2">GitLab</p>
+          <i class="fa fa-gitlab"></i>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center p-2 SocialMediaIcon_Navbar"
+          onclick="ChangeTheme_Suggested(this)">
+          <p class="m-0 mr-2">Dark</p>
+          <i class="fa fa-moon-o"></i>
+        </div>
+      </div>
+    </header>
+
+    <main class="mt-4 d-flex flex-column align-items-center justify-content-center bg-Gray rounded-lg p-5">
+      <section class="w-100 text-center intro">
+        <h3 class="Bold">Suggest Us</h3>
+        <p class="m-0 small mt-4">
+          Cant Find The Icon You Want ?
+          <span class="Bold"> Just Drop Us a Line</span>
+        </p>
+      </section>
+
+      <section class="Form d-flex flex-column flex-lg-row justify-content-between p-3 mt-5 w-75 w-lg-100"
+        style="border-radius: 17px">
+
+        <section class="bg-purple mr-5 w-50 w-lg-100 p-4 position-relative SideForm">
+          <h5 class="m-0 Bold" style="font-family: Outfit !important;">Request Icon</h6>
+            <small class="small d-inline-block mt-4">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas
+              facere,dipisicing elit. Quasdipisicing elit. Quas
+            </small>
+
+            <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center  mt-5">
+              <i class="fa fa-phone mb-2 mb-lg-0 mr-lg-3"></i>
+              <p class="m-0">09965478215</p>
+            </div>
+
+            <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center  mt-4">
+              <i class="fa fa-envelope mb-2 mb-lg-0 mr-lg-3"></i>
+              <p class="m-0">ajdosJust@gmail.com</p>
+            </div>
+
+            <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center mt-4">
+              <i class="fa fa-location-arrow mb-2 mb-lg-0 mr-lg-3"></i>
+              <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+
+            <div class="mt-5 pt-3 d-none d-md-flex flex-row flex-lg-column align-items-start SocialMedia">
+              <i class="fa fa-envelope my-1 mx-lg-0 mx-1"> </i>
+              <i class="fa fa-diamond my-1 mx-lg-0 mx-1"> </i>
+              <i class="fa fa-git my-1 mx-lg-0 mx-1"> </i>
+              <i class="fa fa-flag my-1 mx-lg-0 mx-1"> </i>
+            </div>
+
+            <img src="./Assets/img/Form_Image.png" alt="" class="position-absolute img-fluid h-25"
+              style="right: 0; bottom: 0;">
+
+        </section>
+
+
+        <section class="text-black-50 w-75 w-lg-100 mt-lg-0">
+          <div class="d-flex mt-2">
+            <div class="d-flex flex-column align-items-start mr-3 w-50">
+              <small>First Name</small>
+              <input type="text" class="form-control my-1" placeholder="Micheal" />
+            </div>
+
+            <div class="d-flex flex-column align-items-start ml-3 w-50">
+              <small>Last Name</small>
+              <input type="text" class="form-control my-1" placeholder="Watson" />
+            </div>
+          </div>
+
+          <div class="d-flex mt-2">
+            <div class="d-flex flex-column align-items-start mr-3 w-50">
+              <small>Business Type</small>
+              <input type="text" class="form-control my-1" placeholder="Micheal" />
+            </div>
+
+            <div class="d-flex flex-column align-items-start ml-3 w-50">
+              <small>Icon Type</small>
+              <input type="text" class="form-control my-1" placeholder="Watson" />
+            </div>
+          </div>
+
+          <div class="d-flex mt-2">
+            <div class="d-flex flex-column align-items-start mr-3 w-50">
+              <small>Email addres</small>
+              <input type="text" class="form-control my-1" placeholder="michealwatson@gmail.com" />
+            </div>
+
+            <div class="d-flex flex-column align-items-start ml-3 w-50">
+              <small>Phone</small>
+              <input type="text" class="form-control my-1" placeholder="+ 1 650 513 0514" />
+            </div>
+          </div>
+
+          <div class="d-flex flex-column align-items-start mt-4">
+            <small>Message</small>
+            <textarea name="" id="" cols="30" rows="10" class="form-control mt-1"
+              placeholder="Write your massage"></textarea>
+          </div>
+
+          <div class="mt-5 pt-5 d-flex justify-content-end">
+            <button class="btn BtnPurple">Send Request</button>
+          </div>
+        </section>
+
+
+      </section>
+    </main>
+
+    <footer class="mt-5 bg-Gray text-black-50">
+      <section class="
+            d-flex
+            justify-content-between
+            p-5
+            flex-column flex-md-row
+            align-items-center align-items-md-end
+          ">
+        <div class="d-flex flex-column align-items-center align-items-md-start">
+          <img src="./Assets/img/logo.png" alt="ICONPAQ" style="width: 110px; height: 30px" />
+
+          <div class="d-flex align-items-center mt-4">
+            <i class="fa fa-tags mr-3"></i>
+            <p class="m-0">Powered By <span class="Bold">Envire Tech</span></p>
+          </div>
+
+          <div class="d-flex align-items-center mt-4">
+            <i class="fa fa-unlink mr-3"></i>
+            <p class="m-0">icons@envire.tech</p>
+          </div>
+        </div>
+
+        <div class="Footer_SocialMedia d-flex align-items-end mt-5 mt-md-0">
+          <img src="./Assets/img/SocialMedia_1.png" alt="" class="img-fluid mx-3 Pointer">
+          <img src="./Assets/img/SocialMedia_2.png" alt="" class="img-fluid mx-3 Pointer">
+          <img src="./Assets/img/SocialMedia_3.png" alt="" class="img-fluid mx-3 Pointer">
+          <img src="./Assets/img/SocialMedia_4.png" alt="" class="img-fluid mx-3 Pointer">
+        </div>
+      </section>
+
+      <section class="
+            d-flex
+            justify-content-between
+            align-items-center
+            border-top
+            pt-4
+            pb-4
+            px-5
+            flex-column flex-md-row
+          ">
+        <h6><span class=" Bold">ICONPAQ </span>All rights reserved 2022</h6>
+        <div class="d-flex mt-2 mt-md-0">
+          <a href="#" class="mx-2">GDPR Policy</a>
+          <a href="#" class="mx-2">Privacy Policy</a>
+          <a href="#" class="mx-2">Terms & Conditions</a>
+        </div>
+      </section>
+    </footer>
+  </div>
+  <!-- //------------------------------------------ -->
+  <!-- // Bootstrap Js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+  </script>
+  <!-- // Jquery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- // FontAwesome CDN -->
+  <script src="https://use.fontawesome.com/a020051675.js"></script>
+  <!-- // Custom Js -->
+  <script src="Assets/js/Custom.js"></script>
+</body>
+
+</html>

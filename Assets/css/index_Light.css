@@ -1,0 +1,56 @@
+@font-face{font-family:"Barlow";src:url("../fonts/Barlow-Regular.otf"),url("../fonts/Barlow-Medium.otf") format("otf"),url("../fonts/Barlow-Light.otf") format("otf"),url("../fonts/Barlow-Extra Bold.ttf") format("ttf"),url("../fonts/Barlow-Bold.otf") format("otf")}@font-face{font-family:"Outfit";src:url("../fonts/Outfit-Regular.woff"),url("../fonts/Outfit-Medium.woff") format("woff"),url("../fonts/Outfit-Light.woff") format("woff"),url("../fonts/Outfit-ExtraBold.woff") format("woff"),url("../fonts/Outfit-Bold.woff") format("woff")}body{font-family:"Barlow" !important}html{scroll-behavior:smooth}a{text-decoration:none !important}.Bold{font-weight:bold !important}.Pointer{cursor:pointer !important}.Color_Gray{color:#ccc !important}.Color_Purple{color:#685AD3}.bg-purple{background-color:#685AD3}.bg-hight-Gary{background-color:#e5e4f2;color:#56566F}.bg-Gray{background-color:#F2F2F8}.BtnPurple{background-color:#685AD3;color:#fff;border-radius:8px;font-size:15px}.BtnPurple:hover{color:#fff}.BtnGray{background-color:#e5e4f2 !important;color:#F2F2F8;border-radius:8px;font-size:15px}body,.modal-content{background-color:#fff !important}* , a , ss pre{color:#56566F;  }.BtnPurple>*,.bg-purple{color:#F2F2F8 !important}header .Line_Menu_Item{position:relative;font-weight:bold}header .Line_Menu_Item::before{content:"";position:absolute;bottom:0px;left:0px;width:0%;height:2px;border-radius:50px;-webkit-transition:all 0.3s;transition:all 0.3s;background-color:#685AD3}header .Line_Menu_Item:hover::before{width:100%}header .Active_Item_MainMenu::before{content:"";position:absolute;bottom:0px;left:0px;width:100%;height:2px;border-radius:50px;background-color:#685AD3}header .SocialMediaIcon_Navbar{background-color:#F2F2F8;width:35px;border-radius:40px;-webkit-transition:all 0.3s;transition:all 0.3s;cursor:pointer;margin:0 6px; padding: 6px !important;   }header .SocialMediaIcon_Navbar i{font-size:17px}header .SocialMediaIcon_Navbar p{display:none}header .SocialMediaIcon_Navbar:hover{width:100px}header .SocialMediaIcon_Navbar:hover p{display:inline-block}header .SocialMediaIcon_Navbar_Active{width:100px}header .SocialMediaIcon_Navbar_Active p{display:inline-block}main{overflow:hidden;position:relative}main .Intro{background-color:#F2F2F8;border-radius:16px}main .SearchInput:focus{outline:none;border:none;-webkit-box-shadow:0 0 0;box-shadow:0 0 0}main .SearchInput::-webkit-input-placeholder{color:#ccc !important}main .SearchInput:-ms-input-placeholder{color:#ccc !important}main .SearchInput::-ms-input-placeholder{color:#ccc !important}main .SearchInput::placeholder{color:#ccc !important}main .Container_Icons{display:-ms-grid;display:grid;-ms-grid-columns:auto auto auto auto auto auto auto auto;grid-template-columns:auto auto auto auto auto auto auto auto;gap:30px}main .Container_Icons .Icon_Pack{ max-width: 88.963px; display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;cursor:pointer}main .Container_Icons .Icon_Pack i{font-size:24px}main .Container_Icons .Icon_Pack small{font-size:9px;padding:3px;margin:1px 3px;display:inline-block}main .Container_Icons .Icon_Pack .Utils{display:-webkit-box;display:-ms-flexbox;display:flex;visibility:hidden}main .Container_Icons .Icon_Pack div{-webkit-transition:all 0.1s;transition:all 0.1s}main .Container_Icons .Icon_Pack:hover div{background-color:#F2F2F8}main .Container_Icons .Icon_Pack:hover .Utils{visibility:visible}main .MultipleSelect_Menu{ display: none; -webkit-transition:all .3s;transition:all .3s;padding:10px;position:fixed;width:350px;height:65px;right:-320px;top:400px;background:#685AD3;border-width:3px 0px 3px 3px;border-style:solid;border-color:#F2F2F8;border-radius:71.5px 0px 0px 71.5px}main .MultipleSelect_Menu .BtnGray{background-color:#685AD3 !important}main .MultipleSelect_Menu:hover{background-color:#fff;right:0px}main .MultipleSelect_Menu:hover .BtnGray{background-color:#F2F2F8 !important}main .MultipleSelect_Menu:hover .Text_Multiple{display:none}main .MultipleSelect_Menu .Text_Multiple{position:absolute;left:-11px;bottom:9px;-webkit-transform:rotateZ(-90deg);transform:rotateZ(-90deg);color:#F2F2F8 !important;font-weight:500;font-size:10px}footer .Footer_SocialMedia img{width:30px;height:30px}@media only screen and (min-width: 992px){.w-lg-auto{width:auto !important}}@media only screen and (max-width: 992px){.w-lg-100{width:100% !important}main .Container_Icons{-ms-grid-columns:auto auto auto auto auto;grid-template-columns:auto auto auto auto auto}main .SideForm{height:559px !important}}@media only screen and (max-width: 768px){main .Container_Icons{-ms-grid-columns:auto auto auto;grid-template-columns:auto auto auto}}@media only screen and (max-width: 600px){main .Intro{border-radius:0px !important}} #ConImageChange{width: 120px; height: 120px;}
+ svg{ width: 30px; height: 30px;} pre{color:#56566F !important;   } .NewGray{background-color: #e5e9f0 !important;} .Icons_Button_Slider{visibility: hidden; position: absolute;} 
+ .Code_Text , .Code_Text_1 , .Category
+{
+  visibility: hidden;
+  position: absolute;
+}
+
+.svgwhite >*
+{
+  fill: #F2F2F8 !important;
+}
+
+.svgblack >*
+{
+  fill: #56566F !important;
+}
+
+.svg-sidebar
+{
+  transition: .5s;
+  width: 0px;
+}
+
+.Font14
+{
+  font-size: 14px !important;
+}
+.Font16
+{
+  font-size: 16px !important;
+}
+
+
+.Icon_Pack-1{ max-width: 88.963px; display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;cursor:pointer}
+main .Container_Icons .Icon_Pack-1 i{font-size:24px}
+main .Container_Icons .Icon_Pack-1 small{font-size:9px;padding:3px;margin:1px 3px;display:inline-block}
+main .Container_Icons .Icon_Pack-1 .Utils{display:-webkit-box;display:-ms-flexbox;display:flex;visibility:hidden}
+main .Container_Icons .Icon_Pack-1 div{-webkit-transition:all 0.1s;transition:all 0.1s}
+main .Container_Icons .Icon_Pack-1:hover div{background-color:#F2F2F8}main .Container_Icons 
+.Icon_Pack-1:hover .Utils{visibility:visible}
+
+.bg-icons
+{
+  background-color: #F2F2F8; padding: 24px; border-radius: 10px;
+}
+
+main .Container_Icons .Icon_Pack div
+{
+  border: 0.3px solid #F2F2F8;
+  border-radius: 11px !important;
+}
+
+
+
+ /*# sourceMappingURL=index_Light.css.map *

@@ -1,0 +1,156 @@
+$Color_1: #FFFFFF;
+$Color_2: #F2F2F8;
+$Color_3: #56566F;
+
+@import "Main";
+
+body,
+.modal-content {
+    background-color: $Color_1 !important;
+}
+
+*,
+.bg-hight-Gary>* {
+    color: $Color_3 !important;
+}
+
+
+.BtnPurple,
+.bg-purple {
+    color: $Color_2 !important;
+}
+
+
+header {
+    .Line_Menu_Item {
+        position: relative;
+        font-weight: bold;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 0%;
+            height: 2px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            background-color: $Purple;
+        }
+
+        &:hover::before {
+            width: 100%;
+        }
+    }
+
+    .Active_Item_MainMenu::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        border-radius: 50px;
+        background-color: $Purple;
+    }
+
+    .SocialMediaIcon_Navbar {
+        background-color: $Color_2;
+        width: 35px;
+        border-radius: 40px;
+        transition: all 0.3s;
+        cursor: pointer;
+        margin: 0 6px;
+
+        i {
+            font-size: 17px;
+        }
+
+        p {
+            display: none;
+        }
+
+        &:hover {
+            width: 100px;
+
+            p {
+                display: inline-block;
+            }
+        }
+    }
+
+    .SocialMediaIcon_Navbar_Active {
+        width: 100px;
+
+        p {
+            display: inline-block;
+        }
+    }
+}
+
+main {
+
+    input[type="text"],
+    textarea {
+        background-color: $Color_2 !important;
+        border-radius: 5px !important;
+        border: none !important;
+        font-size: 14px !important;
+        resize: none;
+
+        &:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 !important;
+            border: 1px solid $Purple !important;
+        }
+    }
+
+    small {
+        font-size: 12px;
+    }
+
+    .SocialMedia {
+        i {
+            border: 1px solid $Color_1;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: $Color_1;
+                color: $Color_3;
+            }
+        }
+    }
+
+    .SideForm {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .Image-Zoom {
+        min-height: 450px !important;
+    }
+
+    .Form {
+        background-color: $Color_1;
+    }
+}
+
+footer {
+    .Footer_SocialMedia {
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.SideForm>*,
+.SideForm div>* {
+    color: $Color_2 !important;
+}
+
+@import "Media";

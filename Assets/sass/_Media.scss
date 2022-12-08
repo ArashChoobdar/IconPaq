@@ -1,0 +1,40 @@
+@media only screen and (min-width: 1200px) {}
+
+@media only screen and (min-width: 992px) {
+  .w-lg-auto {
+    width: auto !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .w-lg-100 {
+    width: 100% !important;
+  }
+
+  main {
+    .Container_Icons {
+      grid-template-columns: auto auto auto auto auto;
+    }
+
+    .SideForm {
+      height: 559px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    .Container_Icons {
+      grid-template-columns: auto auto auto;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  main {
+    .Intro {
+      border-radius: 0px !important;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.Bold {
+  font-weight: bold !important;
+}
+
+.Pointer {
+  cursor: pointer !important;
+}
+
+.Color_Gray {
+  color: #ccc !important;
+}
+
+.Color_Purple {
+  color: $Purple;
+}
+
+.bg-purple {
+  background-color: $Purple;
+
+}
+
+.bg-hight-Gary {
+  background-color: #e5e4f2;
+  color: $Color_3;
+}
+
+.bg-Gray {
+  background-color: $Color_2;
+}
+
+.BtnPurple {
+  background-color: $Purple;
+  color: $Color_1;
+  border-radius: 8px;
+  font-size: 15px;
+
+  &:hover {
+    color: $Color_1;
+  }
+}
+
+.BtnGray {
+  background-color: #e5e4f2 !important;
+  color: $Color_2;
+  border-radius: 8px;
+  font-size: 15px;
+}
