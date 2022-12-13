@@ -1,16 +1,110 @@
-$(document).ready(function () {
-  // $(window).resize(function () {
-  //   var width = $(window).width();
-  //   if (width > 1400) {
-  //     $("#Container").removeClass("container-fluid");
-  //     $("#Container").addClass("container");
-  //   }
-  //   if (width <= 1400) {
-  //     $("#Container").removeClass("container");
-  //     $("#Container").addClass("container-fluid");
-  //   }
-  // });
-});
+
+
+
+
+
+
+// Set Outline Icon To Defult
+
+var Items = document.getElementsByClassName("Icon_Pack");
+
+for (var i = 0; i < Items.length; i++) {
+
+  
+  if(Items[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg").length == 3)
+  {
+  }
+  else
+  {
+    var Original = Items[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[3];
+  }
+  if(Items[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg").length == 5)
+  {
+    var Original = Items[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[4];
+  }
+
+  var IconSvg = Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+
+  Original = Original.cloneNode(true);
+  IconSvg.replaceWith(Original);
+  
+
+}
+
+// End Set Outline Icon To Defult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // For Add Fill WIth To Svg Balck
 var Items = document.getElementsByClassName("Icon_Pack");
@@ -89,6 +183,69 @@ function ChangeTheme_Index(obj) {
         path[i].setAttribute("fill", "#f2f2f8");
       }
     }
+      GetBackColorToColorfulIcons();
+
+
+
+      var Items = document.getElementsByClassName("Icon_Pack");
+
+      if(document.getElementById("mycolorful").parentElement.classList.contains("Font14"))
+      {
+        for (var i = 0; i < Items.length; i++) {
+          var Colorful = Items[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[1];
+          var IconSvg = Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+          
+            Colorful = Colorful.cloneNode(true);
+            IconSvg.replaceWith(Colorful);
+    
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
   } else {
     CheckTheme = false;
     document
@@ -97,6 +254,7 @@ function ChangeTheme_Index(obj) {
         "beforeend",
         "<link rel='stylesheet' href='Assets/css/index_Light.css' />"
       );
+      document.getElementById("SetColorToIcon").value = "#56566F";
     ++count1;
     obj.getElementsByTagName("i")[0].className = "fa fa-moon-o";
     var path = document.getElementsByTagName("path");
@@ -108,6 +266,25 @@ function ChangeTheme_Index(obj) {
         path[i].setAttribute("fill", "#56566F");
       }
     }
+
+    GetBackColorToColorfulIcons();
+
+
+
+    var Items = document.getElementsByClassName("Icon_Pack");
+
+    if(document.getElementById("mycolorful").parentElement.classList.contains("Font14"))
+    {
+      for (var i = 0; i < Items.length; i++) {
+        var Colorful = Items[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[1];
+        var IconSvg = Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+        
+          Colorful = Colorful.cloneNode(true);
+          IconSvg.replaceWith(Colorful);
+  
+      }
+    }
+
   }
 }
 
@@ -130,6 +307,7 @@ function ChangeTheme_Suggested(obj) {
         "beforeend",
         "<link rel='stylesheet' href='Assets/css/SuggestUs_Light.css' />"
       );
+      
     ++count2;
     obj.getElementsByTagName("p")[0].innerHTML = "Dark";
   }
@@ -145,8 +323,22 @@ function watchColorPicker(event) {
     } else {
       p.setAttribute("fill", event.target.value);
     }
+    GetBackColorToColorfulIcons();
     document.getElementById("SetColorToIcon").value = event.target.value;
   });
+
+  if(document.getElementById("mycolorful").parentElement.classList.contains("Font14"))
+  {
+    for (var i = 0; i < Items.length; i++) {
+      var Colorful = Items[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[1];
+      var IconSvg = Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+      
+        Colorful = Colorful.cloneNode(true);
+        IconSvg.replaceWith(Colorful);
+
+    }
+  }
+
 }
 
 function ChangeIcon(obj) {
@@ -239,16 +431,14 @@ function ChangeIcon(obj) {
 
 
 
-
-
 var colorPicker2 = document.getElementById("ColorPic2");
 
 colorPicker2.addEventListener("change", watchColorPicker2, false);
 function watchColorPicker2(event) {
+  document.getElementById("SetColorToIcon2").value = event.target.value;
  // var Container = document.getElementById("ContainerImage");
  var Container = document.getElementById("ConImageChange").getElementsByTagName("path");
      var NewContainer = document.getElementById("ConImageChange"); 
-console.log(Container.length);
 
   if (Container.length > 0) {
   	
@@ -455,7 +645,6 @@ function MultiSelect(obj) {
 
   var copysvg = $(svgcode).clone()[0];
 
-  console.log(copysvg);
 
   svgcode.getElementsByTagName("svg")[0].style.width = null;
   svgcode.getElementsByTagName("svg")[0].style.height = null;
@@ -495,30 +684,62 @@ function htmlEntities(str) {
 }
 
 function ClickMulti(obj) {
-  // var myitem = document.getElementsByClassName("MultipleSelect_Menu")[0];
   $(".MultipleSelect_Menu").toggle();
-  // var display = myitem.style.display;
 
-// myitem.style.display = "block";
-  var Items = document.getElementsByClassName("Icon_Pack");
 
-  for (var i = 0; i < Items.length; i++) {
-    $(Items[i]).attr(
-      "data-target",
-      $(Items[i]).attr("data-target") == "" ? "#exampleModal" : ""
-    );
-  }
 
-  if (obj.classList.contains("bg-Gray")) {
-    obj.classList.remove("bg-Gray", "p-2", "rounded-lg");
-    var items = document.getElementsByClassName("Icon_Pack");
+var Items = document.getElementsByClassName("Icon_Pack");
 
-    for (var i = 0; i <= items.length; i++) {
-      items[i].classList.remove("bg-Gray");
+for (var i = 0; i < Items.length; i++) {
+  $(Items[i]).attr(
+    "data-target",
+    $(Items[i]).attr("data-target") == "" ? "#exampleModal" : ""
+  );
+}
+
+if (obj.classList.contains("bg-Gray")) {
+  obj.classList.remove("bg-Gray", "rounded-lg");
+  var items = document.getElementsByClassName("Icon_Pack");
+
+  for (var i = 0; i <= items.length; i++) {
+    items[i].classList.remove("bg-Gray");
+
+    if(document.getElementsByClassName("Icon_Pack-1").length > 0)
+    {
+      var myitem = document.getElementsByClassName("Icon_Pack-1");
+
+      for (let w = 0; w < myitem.length; w++) {
+        
+        if(myitem[w].classList.contains("bg-Gray"))
+        {
+          myitem[w].classList.remove("bg-Gray");
+        }        
+      }
+
     }
-  } else {
-    obj.classList.add("bg-Gray", "p-2", "rounded-lg");
+
   }
+} else {
+  obj.classList.add("bg-Gray", "rounded-lg");
+}
+
+
+
+  if(document.getElementsByClassName("Icon_Pack-1").length > 0)
+  {
+
+    var Items2 = document.getElementsByClassName("Icon_Pack-1");
+    
+    for (var i1 = 0; i1 < Items2.length; i1++) {
+      $(Items2[i1]).attr(
+        "data-target",
+        $(Items2[i1]).attr("data-target") == "" ? "#exampleModal" : ""
+        );
+    }
+    
+  }
+
+
 }
 
 function CancleMultiSelect() {
@@ -540,18 +761,37 @@ function CancleMultiSelect() {
     button1.classList.contains("bg-Gray") ||
     button2.classList.contains("bg-Gray")
   ) {
-    button1.classList.remove("bg-Gray", "p-2", "rounded-lg");
-    button2.classList.remove("bg-Gray", "p-2", "rounded-lg");
+    button1.classList.remove("bg-Gray", "rounded-lg");
+    button2.classList.remove("bg-Gray", "rounded-lg");
+    
+    if(document.getElementsByClassName("Icon_Pack-1").length > 0)
+    {
+      console.log("hast");
+      var myitem = document.getElementsByClassName("Icon_Pack-1");
+
+      for (let w = 0; w < myitem.length; w++) {
+        
+        if(myitem[w].classList.contains("bg-Gray"))
+        {
+          myitem[w].classList.remove("bg-Gray");
+        }        
+      }
+
+    }
+
     var items = document.getElementsByClassName("Icon_Pack");
 
     for (var i = 0; i <= items.length; i++) {
       items[i].classList.remove("bg-Gray");
     }
+    
+
   } else {
-    button1.classList.add("bg-Gray", "p-2", "rounded-lg");
-    button2.classList.add("bg-Gray", "p-2", "rounded-lg");
+    button1.classList.add("bg-Gray", "rounded-lg");
+    button2.classList.add("bg-Gray", "rounded-lg");
   }
 }
+
 
 function CopyText(obj) {
   var copyText = obj.parentElement.innerText;
@@ -595,6 +835,32 @@ ctxt.clearRect(0, 0, canvas.width, canvas.height);
 
 
 function downloadAll() { 
+
+
+  if(document.getElementsByClassName("Icon_Pack-1").length > 0)
+  {
+ const myitem = document.getElementsByClassName("Icon_Pack-1");
+
+ for (let l = 0; l < myitem.length; l++) {
+ var Container1 = document.querySelector("#ConImageChange");
+ var mySvg1 = myitem[l].firstChild.nextElementSibling.firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+ var copySvg1 = mySvg1.cloneNode(true);
+ var text1 = myitem[l].getElementsByClassName("Icon_Text")[0].getElementsByTagName("small")[0].innerHTML;
+ copySvg1.setAttribute("id" , "ConImageChange");
+
+ Container1.replaceWith(copySvg1);
+ DownloadPNG(text1);
+ }
+
+
+  }
+
+
+
+
+
+
+
 	
  const items = document.getElementsByClassName("Icon_Pack");
 
@@ -615,7 +881,7 @@ function downloadAll() {
 }
 
 
-function donloadSVG() {
+function donloadSVG(name = "Icon") {
   var svgEl = document.getElementById("ConImageChange");
   svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
   var svgData = svgEl.outerHTML;
@@ -626,11 +892,27 @@ function donloadSVG() {
   var svgUrl = URL.createObjectURL(svgBlob);
   var downloadLink = document.createElement("a");
   downloadLink.href = svgUrl;
-  downloadLink.download = "Icon";
+  downloadLink.download = `"${name}".svg`;
   document.body.appendChild(downloadLink);
   downloadLink.click();
   document.body.removeChild(downloadLink);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function multiSelect() {
   var myitem = document.getElementsByClassName("MultipleSelect_Menu")[0];
@@ -642,6 +924,40 @@ function multiSelect() {
     button1.classList.contains("bg-Gray") ||
     button2.classList.contains("bg-Gray")
   ) {
+
+    if(document.getElementsByClassName("Icon_Pack-1").length > 0)
+    {
+
+      var myitem = document.getElementsByClassName("Icon_Pack-1");
+
+      for (let q = 0; q < myitem.length; q++) {
+
+        if(myitem[q].classList.contains("bg-Gray"))
+        {
+          myitem[q].classList.remove("bg-Gray");
+          var Container1 = document.querySelector("#ConImageChange");
+
+          var mySvg1 = myitem[q].childNodes[1].firstChild.nextSibling.getElementsByTagName("svg")[0];
+          var copySvg1 = mySvg1.cloneNode(true);
+          var text1 = myitem[q].getElementsByClassName("Icon_Text")[0].getElementsByTagName("small")[0].innerHTML;
+          copySvg1.setAttribute("id" , "ConImageChange");
+
+          Container1.replaceWith(copySvg1);
+          if(document.getElementById("pngtosvg").innerText === "PNG")
+          {
+            DownloadPNG(text1);
+           }else if(document.getElementById("pngtosvg").innerText === "SVG")
+           {
+             donloadSVG(text1);
+          }
+        }
+
+      }
+
+
+    }
+
+
     var items = document.getElementsByClassName("Icon_Pack");
 
     for (var i = 0; i < items.length; i++) {
@@ -658,8 +974,15 @@ function multiSelect() {
  copySvg.setAttribute("id" , "ConImageChange");
 
  Container.replaceWith(copySvg);
+
+ if(document.getElementById("pngtosvg").innerText === "PNG")
+ {
+   DownloadPNG(text);
+  }else if(document.getElementById("pngtosvg").innerText === "SVG")
+  {
+    donloadSVG(text);
+ }
   
- DownloadPNG(text);
           
           
           
@@ -669,6 +992,12 @@ function multiSelect() {
   } else {
   }
 }
+
+
+
+
+
+
 
 
 
@@ -744,6 +1073,7 @@ function SwitchColor1(obj) {
     var IconSvg = Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
     
     var Icon_Pack_1 = document.getElementsByClassName("Icon_Pack-1");
+    
     if(Icon_Pack_1.length == 0)
     {
       switch(Check) {
@@ -757,12 +1087,12 @@ function SwitchColor1(obj) {
             IconSvg.replaceWith(Colorful);
             break;
   
-            case "THIN":
+            case "LINEAR":
               Thin = Thin.cloneNode(true);
               IconSvg.replaceWith(Thin);
               break;
               
-              case "ORIGINAL":
+              case "OUTLINE":
             Original = Original.cloneNode(true);
             IconSvg.replaceWith(Original);
           break;
@@ -785,12 +1115,12 @@ function SwitchColor1(obj) {
               IconSvg.replaceWith(Colorful);
               break;
     
-              case "THIN":
+              case "LINEAR":
                 Thin = Thin.cloneNode(true);
                 IconSvg.replaceWith(Thin);
                 break;
                 
-                case "ORIGINAL":
+                case "OUTLINE":
               Original = Original.cloneNode(true);
               IconSvg.replaceWith(Original);
             break;
@@ -913,7 +1243,6 @@ for (let i = 0; i < Items.length; i++) {
   {
     for (let j = 0; j < Icon_Pack_1.length; j++) {
       Icon_Pack_1[j].replaceWith(" ");     
-      console.log("Hello");   
       }
 
   }
@@ -1118,17 +1447,42 @@ function SetColorToIcons(obj)
   var text = obj.value;
   document.getElementById("ColorPic").value = text;
 
-  var Items = document.getElementsByClassName("Icon_Pack");
+  var Items = document.getElementsByClassName("Icon");
+  console.log(Items);
 
   for (let i = 0; i < Items.length; i++) {
-    var svg = Items[i].firstChild.nextSibling.getElementsByTagName("i")[0].getElementsByTagName("svg")[0].getElementsByTagName("path");
+      if (Items[i].getAttribute("stroke")) {
+        Items[i].setAttribute("stroke", text);
+      } else {
+        Items[i].setAttribute("fill", text);
+      }
+      GetBackColorToColorfulIcons();
+      if(document.getElementById("mycolorful").parentElement.classList.contains("Font14"))
+      {
+        for (var i1 = 0; i1 < Items.length; i1++) {
+          var Colorful = Items[i1].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[1];
+          var IconSvg = Items[i1].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+          
+            Colorful = Colorful.cloneNode(true);
+            IconSvg.replaceWith(Colorful);
     
-    for (let j = 0; j < svg.length; j++) {
-      svg[j].setAttribute("fill" , text)    
-    }
-  
+        }
+      }
   }
 
+
+}
+
+function SetColorToIcons2(obj)
+{
+  var text = obj.value;
+  document.getElementById("ColorPic2").value = text;
+
+  var svg = document.getElementById("ConImageChange").getElementsByTagName("path");
+    
+  for (let j = 0; j < svg.length; j++) {
+    svg[j].setAttribute("fill" , text)    
+  }
 
 }
 
@@ -1140,7 +1494,6 @@ function SetColorToIcons(obj)
 var input = document.getElementsByClassName("rangeSize")[0];
 var size = input.value + "px";
 var sizeView = "0 0 " + input.value + " " + input.value;
-console.log(sizeView);
 document.getElementById("showSize").innerHTML = size;
 
 var Items = document.getElementsByClassName("Icon_Pack");
@@ -1169,7 +1522,6 @@ function CHangeSize()
   var input = document.getElementsByClassName("rangeSize")[0];
   var size = input.value + "px";
   var sizeView = "0 0 " + input.value + " " + input.value;
-  console.log(sizeView);
   document.getElementById("showSize").innerHTML = size;
 
   var Items = document.getElementsByClassName("Icon_Pack");
@@ -1217,6 +1569,31 @@ function CHangeSize()
 }
 
 // ===============================================================
+
+
+  var Items = document.getElementsByClassName("Icon_Pack");
+
+  for (let s = 0; s < Items.length; s++) {
+      
+  var path = Items[s].getElementsByClassName("Icons_Button_Slider")[0].getElementsByClassName("con")[2].getElementsByTagName("svg")[0].getElementsByTagName("path");
+
+  for (let j = 0; j < path.length; j++) {
+    path[j].setAttribute("stroke" , "#56566F");    
+    path[j].setAttribute("fill" , "none");    
+    path[j].setAttribute("stroke-width" , "1px");  
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1301,33 +1678,236 @@ function ChangeStroke()
     }
   }
 
+}
 
 
 
+function resetForm() {
+  var Items = document.getElementsByClassName("Icon_Pack");
+  var color = document.getElementById("SetColorToIcon").value;
+  var ItemClick = document.getElementsByClassName("Switch1");
 
 
+	document.getElementById("showSize").innerHTML = "64px";
+	document.getElementById("showStroke").innerHTML = "1px";
+	
 
 
+// Reset Size
+  
+  for (let i = 0; i < Items.length; i++) {
+
+    var svgs = Items[i].getElementsByTagName("svg");
+
+    for (let j = 0; j < svgs.length; j++) {
+      var svg = svgs[j];
+
+      svg.style.width = "64px";
+      svg.style.height = "64px";
+    }
+
+  }
+  
+ if(document.getElementsByClassName("Icon_Pack-1").length > 0)
+  {
+    var Items_1 = document.getElementsByClassName("Icon_Pack-1");
+    for (let i = 0; i < Items_1.length; i++) {
+
+      var svgs = Items_1[i].getElementsByTagName("svg");
+  
+      for (let j = 0; j < svgs.length; j++) {
+        var svg = svgs[j];
+  
+        svg.style.width = "64px";
+      svg.style.height = "64px";
+      }
+  
+  
+  
+  
+    }
+  } 
+  
+  // End Reset Size 
 
 
+  // Reset Stroke
+
+  for (let s = 0; s < Items.length; s++) {
+      
+  var path = Items[s].getElementsByClassName("Icons_Button_Slider")[0].getElementsByClassName("con")[2].getElementsByTagName("svg")[0].getElementsByTagName("path");
+
+  for (let j = 0; j < path.length; j++) {
+    path[j].setAttribute("stroke" , color);    
+    path[j].setAttribute("fill" , "none");    
+    path[j].setAttribute("stroke-width" , "1");    
+  }
+  }
+
+  // Change To Thin For That Copy
+  for (var i = 0; i < Items.length; i++) {
+    var Thin = Items[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[2];
+  
+    var IconSvg = Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+    
+    var Icon_Pack_1 = document.getElementsByClassName("Icon_Pack-1");
+    if(Icon_Pack_1.length == 0)
+    {
+
+              Thin = Thin.cloneNode(true);
+              IconSvg.replaceWith(Thin);
+
+    }
+    else
+    {
+      for (let j = 0; j < Icon_Pack_1.length; j++) {
+        Icon_Pack_1[j].replaceWith(" ");        
+        }
+
+                Thin = Thin.cloneNode(true);
+                IconSvg.replaceWith(Thin);
 
 
+    }
+  }
+  
+
+  // After That Chenge To Outline
+  for (var i1 = 0; i1 < Items.length; i1++) {
+    
+    if(Items[i1].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg").length == 3)
+    {
+    }
+    else
+    {
+      var Original = Items[i1].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[3];
+    }
+    if(Items[i1].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg").length == 5)
+    {
+      var Original = Items[i1].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[4];
+    }
+
+  
+  
+    var IconSvg = Items[i1].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+    
+    var Icon_Pack_1 = document.getElementsByClassName("Icon_Pack-1");
+    if(Icon_Pack_1.length == 0)
+    {
+            Original = Original.cloneNode(true);
+            IconSvg.replaceWith(Original);
+    }
+    else
+    {
+      for (let j = 0; j < Icon_Pack_1.length; j++) {
+        Icon_Pack_1[j].replaceWith(" ");        
+        }
 
 
+              Original = Original.cloneNode(true);
+              IconSvg.replaceWith(Original);
+
+    }
+  }
 
 
+  
+  for (let j = 0; j < ItemClick.length; j++) {
+    if (ItemClick[j].classList.contains("Font14")) {
+      ItemClick[j].getElementsByTagName("svg")[0].style.width = "0px";
+      ItemClick[j].classList.remove("Font14");
+      ItemClick[j].classList.remove("Bold");
+    }
+  }
+
+  ItemClick[1].getElementsByTagName("svg")[0].style.width = "25px";
+  ItemClick[1].classList.add("Font14");
+  ItemClick[1].classList.add("Bold");
 
 
+  // End Reset Stroke
+  
+  
+  // Reset Color
+
+  var color = jQuery('#showSize').css("color");
+
+  document.querySelectorAll(".Icon").forEach((p) => {
+    if (p.getAttribute("stroke")) {
+      p.setAttribute("stroke", color);
+    } else {
+      p.setAttribute("fill", color);
+    }
+    document.getElementById("SetColorToIcon").value = color;
+  });
+  
+  // End Reset Color
+
+  GetBackColorToColorfulIcons();
+
+	
+	}
 
 
+function GetBackColorToColorfulIcons()
+{
+  var svgnew = document.getElementsByClassName("Icon_Pack");
+
+for (let s = 0; s < svgnew.length; s++) {
+  var svgEdite = svgnew[s].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[1];
+
+svgEdite.setAttribute("id", "colorful");
+
+    var paths = svgEdite.getElementsByTagName("path");
+
+  
+    for (let s = 0; s < paths.length; s++) {
+      var clone = paths[s];
+      var newitem ;
+    
+      newitem = clone.removeAttribute("fill"); 
+    
+      if(s == 0)
+      {
+        newitem =  clone.setAttribute("fill", "#dcdcea");  
+      }
+      if(s == 1)
+      {
+        newitem =  clone.setAttribute("fill", "#685AD3");  
+      }
+      if(s == 2)
+      {
+        newitem =  clone.setAttribute("fill", "#15C0AB");  
+      }
+      if(s >= 3)
+      {
+        newitem =  clone.setAttribute("fill", "#FBB03B");  
+      }
+      
+      
+      
+      newitem = clone.outerHTML.toString().replace("</path>" , "");
+      newitem = newitem.replace(">" , "/>");
+      
+    
+  }
+  
+}
+}
 
 
+function SwitchSvgPng()
+{
+  var text = document.getElementById("pngtosvg").innerHTML.toUpperCase();
 
+  if(text === "PNG")
+  {
+    document.getElementById("pngtosvg").innerHTML = "SVG";
+  }
+  else if (text === "SVG")
+  {
+    document.getElementById("pngtosvg").innerHTML = "PNG";
 
-
-
-
-
-
+  }
 
 }

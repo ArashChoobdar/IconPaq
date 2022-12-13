@@ -179,7 +179,7 @@ main .Container_Icons .Icon_Pack {
   -ms-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
-  border-radius: .8rem!important;
+  border-radius: 24px!important;
 }
 main .Container_Icons .Icon_Pack i {
   font-size: 24px;
@@ -210,15 +210,15 @@ main .MultipleSelect_Menu {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   padding: 10px;
-  position: absolute;
-  width: 350px;
+  position: fixed;
+  width: 390px;
   height: 65px;
-  right: -320px;
-  top: 517px;
+  right: -355px;
+  top: 400px;
   background: #685ad3;
   border-width: 3px 0px 3px 3px;
   border-style: solid;
-  border-color: #f2f2f8;
+  border-color: #2E3042;
   border-radius: 71.5px 0px 0px 71.5px;
 }
 main .MultipleSelect_Menu .BtnGray {
@@ -228,16 +228,14 @@ main .MultipleSelect_Menu:hover {
   background-color: #232230;
   right: 0px;
 }
-main .MultipleSelect_Menu:hover .BtnGray {
-  background-color: #2e3042;
-}
+
 main .MultipleSelect_Menu:hover .Text_Multiple {
   display: none;
 }
 main .MultipleSelect_Menu .Text_Multiple {
   position: absolute;
-  left: -12px;
-  bottom: 12px;
+  left: -11px;
+  bottom: 9px;
   -webkit-transform: rotateZ(-90deg);
   transform: rotateZ(-90deg);
   color: #232230 !important;
@@ -335,8 +333,10 @@ pre {
 
 .bg-icons
 {
-  background-color: #292A3A
-  ; padding: 24px; border-radius: 10px;
+  padding: 24px;
+  background-image: url(../img/Union.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 main .Container_Icons .Icon_Pack div
@@ -344,7 +344,7 @@ main .Container_Icons .Icon_Pack div
 main .Container_Icons .Icon_Pack-1 div
 {
   border: 0.3px solid #2E3042;
-  border-radius: 11px !important;
+  border-radius: 24px !important;
 }
 
 input[type="range"]
@@ -356,8 +356,134 @@ input[type="range"]
   border-radius: 9999px;
   margin-bottom: 24px;
   margin-top: 15px;
-  color: inherit;
-  background-color: #2E3042;
+  color: #56566F;
+  background-color: #56566F;
 }
 
+input[type=range]::-webkit-slider-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 300px;
+  background: #F2F2F8; 
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -2px;
+}
+
+
+
+.SocialMediaIcon_Navbar1
+{
+  background-color:#2e3042;width:35px;border-radius:40px;-webkit-transition:all 0.3s;transition:all 0.3s;cursor:pointer;margin:0 6px; padding: 11px !important;
+}
+
+.searchStyle {
+  border: 0.3px solid #2E3042;
+    border-radius: 24px !important;
+    margin-left: 22px;
+    width: 38vw;
+}
+
+.border-style
+{
+  border: 0.3px solid #2E3042;
+  border-radius: 24px !important;
+  padding: 4px;
+  padding-right: 17px;
+  margin-right: 22px;
+  overflow: hidden;
+}
+
+.Top_Style
+{
+  border: 2px solid #685ad3; padding: 5px 6px !important; border-radius: 46px !important; position: relative;
+}
+
+.Top_Style small
+{
+  color: #56566F !important; font-size: 10px !important;position: absolute;left: 30%;top: 48px;
+}
+
+.Top_Style svg path
+{
+  fill: #56566F !important;
+  color: #56566F !important;
+}
+
+.resettext , .resettext::placeholder
+{
+  color: #56566F !important;
+}
+
+.mainshowsvg
+{
+  border: 1px solid #2E3042;
+}
+
+.closemodal
+{
+  background: #292A3A !important;
+}
+
+.closemodal svg path , .changecolor path
+{
+  fill: #56566F;
+}
+
+.changebgdark
+{
+  background-color: #2E3042 !important;
+}
+.changebgdark span
+{
+  color: #F2F2F8 !important;
+}
+
+a
+{
+  color: #F2F2F8 !important;
+}
+
+.btndark
+{
+  background-color: #292A3A !important;
+}
+
+.btndark span
+{
+  color: #F2F2F8 !important;
+}
+
+.btndark svg path
+{
+  fill: #F2F2F8 !important;
+}
+
+.MultipleSelect_Menu .BtnGray
+{
+  background-color: #2E3042 !important;
+}
+
+/* .btndark2
+{
+  background-color: #2E3042 !important;
+}
+
+.btndark2 span
+{
+  color: #F2F2F8 !important;
+}
+
+.btndark2 svg path
+{
+  fill: #F2F2F8 !important;
+} */
+
+
 /*# sourceMappingURL=index_Dark.css.map */
+main .MultipleSelect_Menu:hover .BtnGray1 {
+  background-color: #2e3042;
+}
+main .MultipleSelect_Menu:hover .BtnGray1 svg path{
+  fill: #F2F2F8;
+}
