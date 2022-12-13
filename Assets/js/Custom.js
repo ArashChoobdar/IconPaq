@@ -1,15 +1,15 @@
 $(document).ready(function () {
-  $(window).resize(function () {
-    var width = $(window).width();
-    if (width > 1400) {
-      $("#Container").removeClass("container-fluid");
-      $("#Container").addClass("container");
-    }
-    if (width <= 1400) {
-      $("#Container").removeClass("container");
-      $("#Container").addClass("container-fluid");
-    }
-  });
+  // $(window).resize(function () {
+  //   var width = $(window).width();
+  //   if (width > 1400) {
+  //     $("#Container").removeClass("container-fluid");
+  //     $("#Container").addClass("container");
+  //   }
+  //   if (width <= 1400) {
+  //     $("#Container").removeClass("container");
+  //     $("#Container").addClass("container-fluid");
+  //   }
+  // });
 });
 
 // For Add Fill WIth To Svg Balck
@@ -66,6 +66,7 @@ function ChangeTheme_Index(obj) {
         "beforeend",
         "<link rel='stylesheet' href='Assets/css/index_Dark.css' />"
       );
+      document.getElementById("SetColorToIcon").value = "#f2f2f8";
     ++count1;
     obj.getElementsByTagName("i")[0].className = "fa fa-sun-o";
     var path = document.getElementsByTagName("path");
@@ -201,8 +202,16 @@ function ChangeIcon(obj) {
   document.getElementById("svg_Code").innerHTML = p[1].innerHTML;
 
   var svgcode = document.getElementById("ContainerIm");
-  var copysvg = $(svgcode).clone()[0];
+ 
+  svgcode.getElementsByTagName("svg")[0].style.width = document.getElementById("showSize").innerHTML;
+  svgcode.getElementsByTagName("svg")[0].style.height = document.getElementById("showSize").innerHTML;
 
+  var copysvg = $(svgcode).clone()[0];
+  
+  svgcode.getElementsByTagName("svg")[0].style.width = null;
+  svgcode.getElementsByTagName("svg")[0].style.height = null;
+  
+  
   copysvg.getElementsByTagName("svg")[0].removeAttribute("id");
   copysvg.getElementsByTagName("svg")[0].removeAttribute("class");
   copysvg.getElementsByTagName("path")[0].removeAttribute("id");
@@ -291,9 +300,6 @@ else{
 	
 	}
   
-
-    
-    
     
     
   } else {
@@ -312,11 +318,16 @@ else{
 
 
 
-
-
   var svgcode = document.getElementById("ContainerIm");
 
+  svgcode.getElementsByTagName("svg")[0].style.width = document.getElementById("showSize").innerHTML;
+  svgcode.getElementsByTagName("svg")[0].style.height = document.getElementById("showSize").innerHTML;
+
   var copysvg = $(svgcode).clone()[0];
+
+  svgcode.getElementsByTagName("svg")[0].style.width = null;
+  svgcode.getElementsByTagName("svg")[0].style.height = null;
+
 
   copysvg.getElementsByTagName("svg")[0].removeAttribute("id");
   copysvg.getElementsByTagName("svg")[0].removeAttribute("class");
@@ -401,16 +412,24 @@ function MultiSelect(obj) {
 
   var newItem =
     obj.childNodes[1].firstChild.nextSibling.firstChild.nextElementSibling;
+    newItem.style.width = null;
+    newItem.style.height = null;
   var CopyNewIte = newItem.cloneNode(true);
   CopyNewIte.setAttribute("id", SvgID);
   CopyNewIte.getElementsByTagName("path")[0].setAttribute("id", PathID);
+
   container.replaceWith(CopyNewIte);
+
+  newItem.style.width = document.getElementById("showSize").innerHTML;
+    newItem.style.height = document.getElementById("showSize").innerHTML;
 
   var Items_New = obj.childNodes[5].getElementsByClassName("con");
   var SliderItems = document.getElementById("Items_Slider");
   SliderItems.innerHTML = "";
   for (let i = 0; i < Items_New.length; i++) {
     var IconItems = Items_New[i];
+    IconItems.getElementsByTagName("svg")[0].style.width = null;
+    IconItems.getElementsByTagName("svg")[0].style.height = null;
     var CopyIconItem = $(IconItems).clone();
 
     const newDiv = document.createElement("div");
@@ -420,6 +439,8 @@ function MultiSelect(obj) {
     newDiv.appendChild(CopyIconItem[0]);
 
     SliderItems.appendChild(newDiv);
+    IconItems.getElementsByTagName("svg")[0].style.width = document.getElementById("showSize").innerHTML;
+    IconItems.getElementsByTagName("svg")[0].style.height = document.getElementById("showSize").innerHTML;
   }
 
   var p = obj.getElementsByClassName("Code_Text")[0].getElementsByTagName("p");
@@ -429,7 +450,15 @@ function MultiSelect(obj) {
 
   var svgcode = document.getElementById("ContainerIm");
 
+  svgcode.getElementsByTagName("svg")[0].style.width = document.getElementById("showSize").innerHTML;
+  svgcode.getElementsByTagName("svg")[0].style.height = document.getElementById("showSize").innerHTML;
+
   var copysvg = $(svgcode).clone()[0];
+
+  console.log(copysvg);
+
+  svgcode.getElementsByTagName("svg")[0].style.width = null;
+  svgcode.getElementsByTagName("svg")[0].style.height = null;
 
   copysvg.getElementsByTagName("svg")[0].removeAttribute("id");
   copysvg.getElementsByTagName("svg")[0].removeAttribute("class");
@@ -531,8 +560,8 @@ function CopyText(obj) {
 }
 
 function CopyTextIcon() {
-  var copyText = document.getElementById("ConImageChange");
-  navigator.clipboard.writeText(copyText.outerHTML);
+  var copyText = document.getElementById("Component_Code").parentElement;
+  navigator.clipboard.writeText(copyText.innerText);
   alert("Icon Copide :)");
 }
 
@@ -804,9 +833,9 @@ function SwitchColor1(obj) {
         var MyThin = Items[i].cloneNode(true);
         
   
-        MyBold.className = "Icon_Pack-1";
-        MyColorful.className = "Icon_Pack-1";
-        MyThin.className = "Icon_Pack-1";
+        MyBold.className = "Icon_Pack-1 rounded-lg";
+        MyColorful.className = "Icon_Pack-1 rounded-lg";
+        MyThin.className = "Icon_Pack-1 rounded-lg";
   
   
         
@@ -1099,6 +1128,206 @@ function SetColorToIcons(obj)
     }
   
   }
+
+
+}
+
+// ===============================================================
+
+
+// Change Size Svg To 64px with reflash
+
+var input = document.getElementsByClassName("rangeSize")[0];
+var size = input.value + "px";
+var sizeView = "0 0 " + input.value + " " + input.value;
+console.log(sizeView);
+document.getElementById("showSize").innerHTML = size;
+
+var Items = document.getElementsByClassName("Icon_Pack");
+
+for (let i = 0; i < Items.length; i++) {
+
+  var svgs = Items[i].getElementsByTagName("svg");
+
+  for (let j = 0; j < svgs.length; j++) {
+    var svg = svgs[j];
+
+    svg.style.width = size;
+    svg.style.height = size;
+  }
+
+}
+
+// End
+
+
+
+
+
+function CHangeSize()
+{
+  var input = document.getElementsByClassName("rangeSize")[0];
+  var size = input.value + "px";
+  var sizeView = "0 0 " + input.value + " " + input.value;
+  console.log(sizeView);
+  document.getElementById("showSize").innerHTML = size;
+
+  var Items = document.getElementsByClassName("Icon_Pack");
+  
+  for (let i = 0; i < Items.length; i++) {
+
+    var svgs = Items[i].getElementsByTagName("svg");
+
+    for (let j = 0; j < svgs.length; j++) {
+      var svg = svgs[j];
+
+      svg.style.width = size;
+      svg.style.height = size;
+    }
+
+
+
+
+  }
+
+
+  if(document.getElementsByClassName("Icon_Pack-1").length > 0)
+  {
+    var Items_1 = document.getElementsByClassName("Icon_Pack-1");
+    for (let i = 0; i < Items_1.length; i++) {
+
+      var svgs = Items_1[i].getElementsByTagName("svg");
+  
+      for (let j = 0; j < svgs.length; j++) {
+        var svg = svgs[j];
+  
+        svg.style.width = size;
+        svg.style.height = size;
+      }
+  
+  
+  
+  
+    }
+  }
+
+  
+
+
+}
+
+// ===============================================================
+
+
+
+
+
+
+
+function ChangeStroke()
+{
+  var input = document.getElementsByClassName("rangeStroke")[0];
+  var size = input.value + "px";
+  var ItemClick = document.getElementsByClassName("Switch1");
+  var color = document.getElementById("SetColorToIcon").value;
+  document.getElementById("showStroke").innerHTML = size;
+
+
+  var Items = document.getElementsByClassName("Icon_Pack");
+
+
+
+  for (let s = 0; s < Items.length; s++) {
+      
+  var path = Items[s].getElementsByClassName("Icons_Button_Slider")[0].getElementsByClassName("con")[2].getElementsByTagName("svg")[0].getElementsByTagName("path");
+
+  for (let j = 0; j < path.length; j++) {
+    path[j].setAttribute("stroke" , color);    
+    path[j].setAttribute("fill" , "none");    
+    path[j].setAttribute("stroke-width" , input.value);    
+  }
+  }
+
+
+
+
+
+
+  for (let j = 0; j < ItemClick.length; j++) {
+    if (ItemClick[j].classList.contains("Font14")) {
+      ItemClick[j].getElementsByTagName("svg")[0].style.width = "0px";
+      ItemClick[j].classList.remove("Font14");
+      ItemClick[j].classList.remove("Bold");
+    }
+  }
+
+
+
+  ItemClick[3].getElementsByTagName("svg")[0].style.width = "25px";
+  ItemClick[3].classList.add("Font14");
+  ItemClick[3].classList.add("Bold");
+
+
+  
+
+
+  var Items1 = document.getElementsByClassName("Icon_Pack");
+
+
+
+  for (var i = 0; i < Items1.length; i++) {
+    var Thin = Items1[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[2];
+  
+    var IconSvg = Items1[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+    
+    var Icon_Pack_1 = document.getElementsByClassName("Icon_Pack-1");
+    if(Icon_Pack_1.length == 0)
+    {
+
+              Thin = Thin.cloneNode(true);
+              IconSvg.replaceWith(Thin);
+
+    }
+    else
+    {
+      for (let j = 0; j < Icon_Pack_1.length; j++) {
+        Icon_Pack_1[j].replaceWith(" ");        
+        }
+
+                Thin = Thin.cloneNode(true);
+                IconSvg.replaceWith(Thin);
+
+
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
