@@ -160,9 +160,6 @@ main .SearchInput::placeholder {
 main .Container_Icons {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto auto auto auto ;
-  grid-template-columns:  auto auto auto auto auto auto;
-  gap: 30px;
 }
 main .Container_Icons .Icon_Pack {
   display: -webkit-box;
@@ -179,7 +176,6 @@ main .Container_Icons .Icon_Pack {
   -ms-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
-  border-radius: 24px!important;
 }
 main .Container_Icons .Icon_Pack i {
   font-size: 24px;
@@ -261,10 +257,6 @@ footer .Footer_SocialMedia img {
   .w-lg-100 {
     width: 100% !important;
   }
-  main .Container_Icons {
-    -ms-grid-columns: auto auto auto auto auto;
-    grid-template-columns: auto auto auto auto auto;
-  }
   main .SideForm {
     height: 559px !important;
   }
@@ -273,10 +265,6 @@ footer .Footer_SocialMedia img {
 @media only screen and (max-width: 992px) {
   .w-lg-100 {
     width: 100% !important;
-  }
-  main .Container_Icons {
-    -ms-grid-columns: auto auto auto auto auto;
-    grid-template-columns: auto auto auto auto auto;
   }
   main .SideForm {
     height: 559px !important;
@@ -294,22 +282,8 @@ footer .Footer_SocialMedia img {
     border-radius: 0px !important;
   }
 }
-@media only screen and (max-width: 503px) {
-  main .Container_Icons {
-    -ms-grid-columns: auto auto   ;
-    grid-template-columns: auto auto   ;
-  }
-}
-@media only screen and (max-width: 315px) {
-  .Icon_Pack , .Icon_Pack-1
-  {
-    width: 83vw !important;
-  }
-  main .Container_Icons {
-    -ms-grid-columns: auto    ;
-    grid-template-columns: auto    ;
-  }
-}
+
+
 
 #ConImageChange {
   width: 120px;
@@ -344,7 +318,6 @@ main .Container_Icons .Icon_Pack div
 main .Container_Icons .Icon_Pack-1 div
 {
   border: 0.3px solid #2E3042;
-  border-radius: 24px !important;
 }
 
 input[type="range"]

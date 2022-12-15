@@ -113,7 +113,7 @@ for (let i = 0; i < Items.length; i++) {
   var Paths = Items[i].getElementsByClassName("Icons_Button_Slider")[0].getElementsByTagName("svg")[2].getElementsByTagName("path");
   
   for (let j = 0; j < Paths.length; j++) {
-    Paths[j].setAttribute("fill" , "#fff")    
+    Paths[j].setAttribute("fill" , "transparent")    
   }
 
 }
@@ -171,10 +171,17 @@ function ChangeTheme_Index(obj) {
         svg[i].setAttribute("stroke", "#f2f2f8");
       }
     }
-
+    
     for (let i = 0; i < path.length; i++) {
       if (path[i].getAttribute("stroke")) {
         path[i].setAttribute("stroke", "#f2f2f8");
+
+        if(path[i].getAttribute("fill") !== "transparent")
+        {
+        path[i].setAttribute("fill", "#f2f2f8");
+        }
+
+
         if (path[i].parentElement.getAttribute("fill") == "none") {
         } else {
           path[i].parentElement.removeAttribute("fill");
@@ -262,6 +269,11 @@ function ChangeTheme_Index(obj) {
     for (let i = 0; i < path.length; i++) {
       if (path[i].getAttribute("stroke")) {
         path[i].setAttribute("stroke", "#56566F");
+        if(path[i].getAttribute("fill") !== "transparent")
+        {
+          console.log("dolo");
+          path[i].setAttribute("fill", "#56566F");
+        }
       } else {
         path[i].setAttribute("fill", "#56566F");
       }
@@ -1579,7 +1591,6 @@ function CHangeSize()
 
   for (let j = 0; j < path.length; j++) {
     path[j].setAttribute("stroke" , "#56566F");    
-    path[j].setAttribute("fill" , "none");    
     path[j].setAttribute("stroke-width" , "1px");  
   }
   }
@@ -1609,21 +1620,28 @@ function ChangeStroke()
   var color = document.getElementById("SetColorToIcon").value;
   document.getElementById("showStroke").innerHTML = size;
 
-
   var Items = document.getElementsByClassName("Icon_Pack");
+
+
+
+
+
 
 
 
   for (let s = 0; s < Items.length; s++) {
       
-  var path = Items[s].getElementsByClassName("Icons_Button_Slider")[0].getElementsByClassName("con")[2].getElementsByTagName("svg")[0].getElementsByTagName("path");
+    var path = Items[s].getElementsByClassName("Icons_Button_Slider")[0].getElementsByClassName("con")[2].getElementsByTagName("svg")[0].getElementsByTagName("path");
+  
+      console.log(input.value);
+    for (let j = 0; j < path.length; j++) {
+      path[j].setAttribute("stroke" , color);    
+      path[j].setAttribute("stroke-width" , input.value);    
+    }
+    }
+  
 
-  for (let j = 0; j < path.length; j++) {
-    path[j].setAttribute("stroke" , color);    
-    path[j].setAttribute("fill" , "none");    
-    path[j].setAttribute("stroke-width" , input.value);    
-  }
-  }
+
 
 
 
@@ -1677,6 +1695,36 @@ function ChangeStroke()
 
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
