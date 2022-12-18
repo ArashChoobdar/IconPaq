@@ -73,26 +73,7 @@ ss pre {
 .bg-purple {
   color: #f2f2f8 !important;
 }
-header .Line_Menu_Item {
-  position: relative;
-  font-size: 18px !important;
-  font-weight: 600;
-}
-header .Line_Menu_Item::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 0%;
-  height: 2px;
-  border-radius: 50px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  background-color: #685ad3;
-}
-header .Line_Menu_Item:hover::before {
-  width: 100%;
-}
+
 header .Active_Item_MainMenu::before {
   content: "";
   position: absolute;
@@ -188,7 +169,6 @@ main .Container_Icons .Icon_Pack-1 {
   font-size: 16px !important;
 }
 
-
 main .Container_Icons .Icon_Pack i,
 main .Container_Icons .Icon_Pack-1 i {
   font-size: 24px;
@@ -225,26 +205,16 @@ main .MultipleSelect_Menu {
   position: fixed;
   width: 390px;
   height: 65px;
-  right: -355px;
+  right: 0px;
   top: 400px;
-  background: #685ad3;
+  background: #fff;
   border-width: 3px 0px 3px 3px;
   border-style: solid;
   border-color: #f2f2f8;
   border-radius: 71.5px 0px 0px 71.5px;
 }
 main .MultipleSelect_Menu .BtnGray {
-  background-color: #685ad3 !important;
-}
-main .MultipleSelect_Menu:hover {
-  background-color: #fff;
-  right: 0px;
-}
-main .MultipleSelect_Menu:hover .BtnGray {
   background-color: #f2f2f8 !important;
-}
-main .MultipleSelect_Menu:hover .Text_Multiple {
-  display: none;
 }
 main .MultipleSelect_Menu .Text_Multiple {
   position: absolute;
@@ -255,6 +225,7 @@ main .MultipleSelect_Menu .Text_Multiple {
   color: #f2f2f8 !important;
   font-weight: 500;
   font-size: 10px;
+  display: none;
 }
 footer .Footer_SocialMedia img {
   width: 30px;
@@ -273,12 +244,12 @@ main .Container_Icons .Icon_Pack-1 div {
   }
   main .Container_Icons .Icon_Pack div,
   main .Container_Icons .Icon_Pack-1 div {
-    height: 81.5px ;
+    height: 81.5px;
   }
   main .Container_Icons .Icon_Pack i,
-main .Container_Icons .Icon_Pack-1 i {
-  height: 175px;
-}
+  main .Container_Icons .Icon_Pack-1 i {
+    height: 175px;
+  }
 }
 @media only screen and (max-width: 992px) {
   .w-lg-100 {
@@ -291,7 +262,6 @@ main .Container_Icons .Icon_Pack-1 i {
   main .SideForm {
     height: 559px !important;
   }
-
 }
 @media only screen and (max-width: 768px) {
   main .Container_Icons {
@@ -367,8 +337,6 @@ main .Container_Icons .Icon_Pack-1:hover .Utils {
   background-size: cover;
 }
 
-
-
 input[type="range"] {
   width: 100%;
   height: 4px;
@@ -411,6 +379,25 @@ input[type="range"]::-webkit-slider-thumb {
   .ChangeSizeLg {
     height: 502px;
     width: 800px;
+  }
+  main .MultipleSelect_Menu {
+    top: 650px;
+  }
+  main .Container_Icons .Icon_Pack i,
+  main .Container_Icons .Icon_Pack-1 i {
+    font-size: 24px;
+    margin-top: 13px;
+    transition: 0.3s;
+  }
+
+  main .Container_Icons .Icon_Pack:hover i,
+  main .Container_Icons .Icon_Pack-1:hover i {
+    margin-top: 0px;
+  }
+  .nav-item1 {
+    width: 105px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -470,9 +457,9 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .mainshowsvg {
-  border: 1px solid #f2f2f8;
-  border-radius: 18px;
-  padding: 12px !important;
+  border: 0px;
+  border-radius: 0px;
+  padding: 0px !important;
   margin-bottom: 3rem !important;
   max-width: 194px !important;
 }
@@ -515,10 +502,10 @@ a {
   fill: #f2f2f8 !important;
 }
 
-main .MultipleSelect_Menu:hover .BtnGray1 {
+main .MultipleSelect_Menu .BtnGray1 {
   background-color: #f2f2f8;
 }
-main .MultipleSelect_Menu:hover .BtnGray1 svg path {
+main .MultipleSelect_Menu .BtnGray1 svg path {
   fill: #56566f;
 }
 
@@ -528,4 +515,38 @@ main .MultipleSelect_Menu:hover .BtnGray1 svg path {
 
 .btndark svg path {
   fill: #56566f !important;
+}
+
+header .nav-item1 {
+  position: relative;
+  font-size: 18px !important;
+  font-weight: 600;
+}
+
+.nav-item1::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0%;
+  height: 2px;
+  border-radius: 50px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: #685ad3;
+}
+
+header .nav-item1:hover::before {
+  width: 100%;
+}
+
+header .Active_Item_MainMenu::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  border-radius: 50px;
+  background-color: #685ad3;
 }
