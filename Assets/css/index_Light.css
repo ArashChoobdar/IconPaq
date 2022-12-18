@@ -206,13 +206,14 @@ main .MultipleSelect_Menu {
   width: 390px;
   height: 65px;
   right: 0px;
-  top: 400px;
+  top: 80vh;
   background: #fff;
   border-width: 3px 0px 3px 3px;
   border-style: solid;
   border-color: #f2f2f8;
   border-radius: 71.5px 0px 0px 71.5px;
 }
+
 main .MultipleSelect_Menu .BtnGray {
   background-color: #f2f2f8 !important;
 }
@@ -238,10 +239,6 @@ main .Container_Icons .Icon_Pack-1 div {
   border-radius: 11px !important;
 }
 
-@media only screen and (min-width: 992px) {
-  .w-lg-auto {
-    width: auto !important;
-  }
   main .Container_Icons .Icon_Pack div,
   main .Container_Icons .Icon_Pack-1 div {
     height: 81.5px;
@@ -250,6 +247,12 @@ main .Container_Icons .Icon_Pack-1 div {
   main .Container_Icons .Icon_Pack-1 i {
     height: 175px;
   }
+
+@media only screen and (min-width: 992px) {
+  .w-lg-auto {
+    width: auto !important;
+  }
+
 }
 @media only screen and (max-width: 992px) {
   .w-lg-100 {
@@ -262,6 +265,21 @@ main .Container_Icons .Icon_Pack-1 div {
   main .SideForm {
     height: 559px !important;
   }
+  .ChangeSizeToMobile
+{
+  width: 280px !important;
+  height: 280px !important;
+  max-width: 10000px !important;
+  margin: 0px !important;
+  max-width: 10000px !important;
+}
+
+.ChangeSizeToMobile i {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 }
 @media only screen and (max-width: 768px) {
   main .Container_Icons {
@@ -334,7 +352,7 @@ main .Container_Icons .Icon_Pack-1:hover .Utils {
   padding: 24px;
   background-image: url(../img/Union.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 input[type="range"] {
@@ -375,32 +393,53 @@ input[type="range"]::-webkit-slider-thumb {
   overflow: hidden;
 }
 
+
+  main .Container_Icons .Icon_Pack:hover i,
+  main .Container_Icons .Icon_Pack-1:hover i {
+    margin-top: 0px;
+  }
+  
+   .mybtn1 {
+		border-radius: 16px !important;
+		overflow: hidden;
+		}
+  
 @media only screen and (min-width: 1350px) {
   .ChangeSizeLg {
     height: 502px;
     width: 800px;
   }
   main .MultipleSelect_Menu {
-    top: 650px;
+    top: 80vh;
   }
-  main .Container_Icons .Icon_Pack i,
-  main .Container_Icons .Icon_Pack-1 i {
-    font-size: 24px;
-    margin-top: 13px;
-    transition: 0.3s;
-  }
+  
 
-  main .Container_Icons .Icon_Pack:hover i,
-  main .Container_Icons .Icon_Pack-1:hover i {
-    margin-top: 0px;
-  }
+ 
   .nav-item1 {
     width: 105px;
     display: flex;
     justify-content: center;
   }
 }
-
+main .Container_Icons .Icon_Pack i,
+  main .Container_Icons .Icon_Pack-1 i {
+    font-size: 24px;
+    margin-top: 13px;
+    transition: 0.3s;
+  }
+  .customizeforphone
+	{
+		border-radius: 30px;
+		overflow: hidden;
+		}
+     .closemodal
+    {
+      background-color: #f2f2f8 !important;
+    }
+    .changesizesvgclose
+    {
+      width: 13px; height: 13px;
+    }
 @media only screen and (max-width: 1350px) {
   .w-lg-100 {
     width: 100% !important;
@@ -417,9 +456,75 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 @media only screen and (max-width: 503px) {
+	
+	
+	
+		
+		
+		
+		
+		.mybtn1 {
+		overflow: visible;
+		}
+	
+	.mybtn , .mybtn > * {
+	margin: 0px !important;
+border-radius: 0px !important;
+	}
+	
+	main .MultipleSelect_Menu {
+  	width: 100vw !important;
+  padding: 0px !important;
+  top:80vh !important;
+  left:0px;
+  right:0px;
+  background: transparent;
+  border: 0px;
+  border-radius: 0px !important;
+  }
+  
+  main .MultipleSelect_Menu span , main .MultipleSelect_Menu small {
+  font-size: 16px !important;	
+  } 
+  
+  .btn1 {
+  	position: absolute;
+      right: 0px;
+       width: 70vw;
+      }
+      
+        .btn2 {
+  	position: absolute; 
+  left:0px;
+      width: 30vw;
+      }
+	
+	
   .changesize > * {
     font-size: 12px !important;
   }
+  
+	.changesizesvgclose
+{
+  width: 16px; height: 16px;
+}
+	
+.customizeforphone
+{
+	width: 100vw !important;
+	height: 100vh !important;
+    margin-left : -8px !important;
+    margin-top: -8px !important;
+    border-radius: 0px !important;
+    overflow: scroll;
+	}
+
+  .customizeforphone .closemodal {
+  background: transparent !important;
+}
+
+
+  
 }
 
 .SocialMediaIcon_Navbar1 {
@@ -457,11 +562,10 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .mainshowsvg {
-  border: 0px;
-  border-radius: 0px;
-  padding: 0px !important;
+  border-radius: 18px;
+  padding: 12px !important;
   margin-bottom: 3rem !important;
-  max-width: 194px !important;
+  max-width: 194px ;
 }
 
 .closemodal {
@@ -470,8 +574,8 @@ input[type="range"]::-webkit-slider-thumb {
   top: 0 !important;
   padding: 9px !important;
   padding-top: 6px !important;
-  background: #f2f2f8 !important;
-  border-radius: 30px 0px 14px !important;
+  background: #f2f2f8;
+  border-radius: 30px 0px 14px ;
   cursor: pointer;
   z-index: 99999999999999;
 }
@@ -550,3 +654,21 @@ header .Active_Item_MainMenu::before {
   border-radius: 50px;
   background-color: #685ad3;
 }
+
+.changecolordropdown
+{
+	background: #fff !important;
+	}  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

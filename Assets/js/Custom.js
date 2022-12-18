@@ -1,3 +1,142 @@
+// add onChange="watchColorPicker()" to who element has ColorPic in modal2 and web windows
+
+$(document).ready(function () {
+  $(window).resize(function () {
+    var width = $(window).width();
+
+    if (width < 757) {
+      var Items = document.getElementsByClassName("MyModal");
+
+      if (Items.length > 0) {
+        var item = localStorage.getItem("modal2");
+      } else {
+        var item = localStorage.getItem("modal2");
+        var afteritem = document.getElementById("afterModal2");
+
+        var stringToHTML = function (str) {
+          var d = $(str);
+          return d;
+        };
+
+        afteritem.parentNode.insertBefore(stringToHTML(item)[0], afteritem);
+
+        document.getElementsByClassName("showSize2")[0].innerHTML =
+          document.getElementsByClassName("showSize")[0].innerHTML;
+        document.getElementsByClassName("changeinput2")[0].value =
+          document.getElementsByClassName("changeinput")[0].value;
+        document.getElementsByClassName("showstroke2")[0].innerHTML =
+          document.getElementsByClassName("showstroke")[0].innerHTML;
+        document.getElementsByClassName("changestrokeinput2")[0].value =
+          document.getElementsByClassName("changestrokeinput")[0].value;
+
+        var colorPicker3 = document.getElementById("ColorPic3");
+        colorPicker3.value = document.getElementById("ColorPic").value;
+        document.getElementById("SetColorToIcon3").value =
+          document.getElementById("ColorPic").value;
+
+        colorPicker3.addEventListener("change", watchColorPicker3, false);
+
+        function watchColorPicker3(event) {
+          document.querySelectorAll(".Icon").forEach((p) => {
+            if (p.getAttribute("stroke")) {
+              p.setAttribute("stroke", event.target.value);
+            } else {
+              p.setAttribute("fill", event.target.value);
+            }
+            GetBackColorToColorfulIcons();
+            document.getElementById("SetColorToIcon3").value =
+              event.target.value;
+          });
+
+          if (
+            document
+              .getElementById("mycolorful")
+              .parentElement.classList.contains("Font14")
+          ) {
+            for (var i = 0; i < Items.length; i++) {
+              var Colorful = Items[i]
+                .getElementsByClassName("Icons_Button_Slider")[0]
+                .getElementsByTagName("svg")[1];
+              var IconSvg =
+                Items[i].firstChild.nextElementSibling.getElementsByTagName(
+                  "svg"
+                )[0];
+
+              Colorful = Colorful.cloneNode(true);
+              IconSvg.replaceWith(Colorful);
+            }
+          }
+        }
+      }
+    }
+    if (width > 757) {
+      document.getElementsByClassName("showSize")[0].innerHTML =
+        document.getElementsByClassName("showSize2")[0].innerHTML;
+      document.getElementsByClassName("changeinput")[0].value =
+        document.getElementsByClassName("changeinput2")[0].value;
+      document.getElementsByClassName("showstroke")[0].innerHTML =
+        document.getElementsByClassName("showstroke2")[0].innerHTML;
+      document.getElementsByClassName("changestrokeinput")[0].value =
+        document.getElementsByClassName("changestrokeinput2")[0].value;
+
+      document.getElementById("ColorPic").value =
+        document.getElementById("ColorPic3").value;
+      document.getElementById("SetColorToIcon").value =
+        document.getElementById("ColorPic3").value;
+      var Items = document.getElementsByClassName("MyModal");
+
+      if (Items.length > 0) {
+        localStorage.setItem("modal2", Items[0].outerHTML);
+        Items[0].replaceWith(" ");
+      }
+    }
+  });
+
+  var width = $(window).width();
+
+  if (width > 757) {
+    var Items = document.getElementsByClassName("MyModal");
+
+    if (Items.length > 0) {
+      localStorage.setItem("modal2", Items[0].outerHTML);
+      Items[0].replaceWith(" ");
+    }
+  }
+});
+
+var colorPicker3 = document.getElementById("ColorPic3");
+
+colorPicker3.addEventListener("change", watchColorPicker3, false);
+
+function watchColorPicker3(event) {
+  document.querySelectorAll(".Icon").forEach((p) => {
+    if (p.getAttribute("stroke")) {
+      p.setAttribute("stroke", event.target.value);
+    } else {
+      p.setAttribute("fill", event.target.value);
+    }
+    GetBackColorToColorfulIcons();
+    document.getElementById("SetColorToIcon3").value = event.target.value;
+  });
+
+  if (
+    document
+      .getElementById("mycolorful")
+      .parentElement.classList.contains("Font14")
+  ) {
+    for (var i = 0; i < Items.length; i++) {
+      var Colorful = Items[i]
+        .getElementsByClassName("Icons_Button_Slider")[0]
+        .getElementsByTagName("svg")[1];
+      var IconSvg =
+        Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
+
+      Colorful = Colorful.cloneNode(true);
+      IconSvg.replaceWith(Colorful);
+    }
+  }
+}
+
 // Set Outline Icon To Defult
 
 var Items = document.getElementsByClassName("Icon_Pack");
@@ -93,8 +232,16 @@ function ChangeTheme_Index(obj) {
     localStorage.setItem("CheckTheme", checkthemesite);
     document.getElementById("introimage").src = "Assets/img/Intro_Image1.png";
     document.getElementById("SetColorToIcon").value = "#f2f2f8";
+    document.getElementById("SetColorToIcon2").value = "#f2f2f8";
+    document.getElementById("ColorPic2").value = "#f2f2f8";
     document.getElementById("ColorPic").value = "#f2f2f8";
 
+    if(document.getElementById("SetColorToIcon3"))
+    {
+      document.getElementById("SetColorToIcon3").value = "#f2f2f8";
+      document.getElementById("ColorPic3").value = "#f2f2f8";
+    }
+    
     obj.getElementsByTagName("i")[0].className = "";
     document.getElementById("svgicontheme").style.display = "inline-block";
     var path = document.getElementsByTagName("path");
@@ -155,8 +302,16 @@ function ChangeTheme_Index(obj) {
     checkthemesite = 1;
     localStorage.setItem("CheckTheme", checkthemesite);
     document.getElementById("introimage").src = "Assets/img/Intro_Image.png";
+    if(document.getElementById("SetColorToIcon3"))
+    {
+      document.getElementById("ColorPic3").value = "#56566F";
+      document.getElementById("SetColorToIcon3").value = "#56566F";
+    }
+
     document.getElementById("SetColorToIcon").value = "#56566F";
     document.getElementById("ColorPic").value = "#56566F";
+    document.getElementById("ColorPic2").value = "#56566F";
+    document.getElementById("SetColorToIcon2").value = "#56566F";
     count1 = 0;
     obj.getElementsByTagName("i")[0].className = "fa fa-moon-o";
     document.getElementById("svgicontheme").style.display = "none";
@@ -224,6 +379,7 @@ function ChangeTheme_Suggested(obj) {
 var colorPicker = document.getElementById("ColorPic");
 
 colorPicker.addEventListener("change", watchColorPicker, false);
+
 function watchColorPicker(event) {
   document.querySelectorAll(".Icon").forEach((p) => {
     if (p.getAttribute("stroke")) {
@@ -402,10 +558,7 @@ function MultiSelect(obj) {
   var colorpic = document.getElementById("ColorPic2");
   colorpic.disabled = false;
   if (
-    document
-      .getElementById("button_MultiSelect1")
-      .classList.contains("bg-Gray") ||
-    document.getElementById("button_MultiSelect2").classList.contains("bg-Gray")
+    document.getElementById("button_MultiSelect1").classList.contains("bg-Gray")
   ) {
     obj.classList.toggle("bg-Gray");
   } else {
@@ -501,6 +654,20 @@ function ClickMulti(obj) {
     );
   }
 
+
+  if (document.getElementsByClassName("Icon_Pack-1").length > 0) {
+    console.log("haseeeeeeee");
+    var Items2 = document.getElementsByClassName("Icon_Pack-1");
+
+    for (var i1 = 0; i1 < Items2.length; i1++) {
+      $(Items2[i1]).attr(
+        "data-target",
+        $(Items2[i1]).attr("data-target") == "" ? "#exampleModal" : ""
+      );
+    }
+  }
+
+
   if (obj.classList.contains("bg-Gray")) {
     obj.classList.remove("bg-Gray", "rounded-lg");
     var items = document.getElementsByClassName("Icon_Pack");
@@ -522,16 +689,7 @@ function ClickMulti(obj) {
     obj.classList.add("bg-Gray", "rounded-lg");
   }
 
-  if (document.getElementsByClassName("Icon_Pack-1").length > 0) {
-    var Items2 = document.getElementsByClassName("Icon_Pack-1");
 
-    for (var i1 = 0; i1 < Items2.length; i1++) {
-      $(Items2[i1]).attr(
-        "data-target",
-        $(Items2[i1]).attr("data-target") == "" ? "#exampleModal" : ""
-      );
-    }
-  }
 }
 
 function CancleMultiSelect() {
@@ -539,7 +697,7 @@ function CancleMultiSelect() {
   myitem.style.display = "none";
 
   var button1 = document.getElementById("button_MultiSelect1");
-  var button2 = document.getElementById("button_MultiSelect2");
+
   var Items = document.getElementsByClassName("Icon_Pack");
 
   for (var i = 0; i < Items.length; i++) {
@@ -549,12 +707,20 @@ function CancleMultiSelect() {
     );
   }
 
-  if (
-    button1.classList.contains("bg-Gray") ||
-    button2.classList.contains("bg-Gray")
-  ) {
+  if (document.getElementsByClassName("Icon_Pack-1").length > 0) {
+    console.log("haseeeeeeee");
+    var Items2 = document.getElementsByClassName("Icon_Pack-1");
+
+    for (var i1 = 0; i1 < Items2.length; i1++) {
+      $(Items2[i1]).attr(
+        "data-target",
+        $(Items2[i1]).attr("data-target") == "" ? "#exampleModal" : ""
+      );
+    }
+  }
+
+  if (button1.classList.contains("bg-Gray")) {
     button1.classList.remove("bg-Gray", "rounded-lg");
-    button2.classList.remove("bg-Gray", "rounded-lg");
 
     if (document.getElementsByClassName("Icon_Pack-1").length > 0) {
       var myitem = document.getElementsByClassName("Icon_Pack-1");
@@ -573,7 +739,6 @@ function CancleMultiSelect() {
     }
   } else {
     button1.classList.add("bg-Gray", "rounded-lg");
-    button2.classList.add("bg-Gray", "rounded-lg");
   }
 }
 
@@ -679,14 +844,33 @@ function multiSelect() {
   var myitem = document.getElementsByClassName("MultipleSelect_Menu")[0];
   myitem.style.display = "none";
   var button1 = document.getElementById("button_MultiSelect1");
-  var button2 = document.getElementById("button_MultiSelect2");
 
-  if (
-    button1.classList.contains("bg-Gray") ||
-    button2.classList.contains("bg-Gray")
-  ) {
+  var Items = document.getElementsByClassName("Icon_Pack");
+
+  for (var i = 0; i < Items.length; i++) {
+    $(Items[i]).attr(
+      "data-target",
+      $(Items[i]).attr("data-target") == "" ? "#exampleModal" : ""
+    );
+  }
+
+  if (document.getElementsByClassName("Icon_Pack-1").length > 0) {
+    console.log("haseeeeeeee");
+    var Items2 = document.getElementsByClassName("Icon_Pack-1");
+
+    for (var i1 = 0; i1 < Items2.length; i1++) {
+      $(Items2[i1]).attr(
+        "data-target",
+        $(Items2[i1]).attr("data-target") == "" ? "#exampleModal" : ""
+      );
+    }
+  }
+
+
+  if (button1.classList.contains("bg-Gray")) {
     if (document.getElementsByClassName("Icon_Pack-1").length > 0) {
       var myitem = document.getElementsByClassName("Icon_Pack-1");
+      button1.classList.remove("bg-Gray", "p-2", "rounded-lg");
 
       for (let q = 0; q < myitem.length; q++) {
         if (myitem[q].classList.contains("bg-Gray")) {
@@ -710,7 +894,9 @@ function multiSelect() {
             donloadSVG(text1);
           }
         }
+        
       }
+
     }
 
     var items = document.getElementsByClassName("Icon_Pack");
@@ -719,7 +905,6 @@ function multiSelect() {
       if (items[i].classList.contains("bg-Gray")) {
         items[i].classList.remove("bg-Gray");
         button1.classList.remove("bg-Gray", "p-2", "rounded-lg");
-        button2.classList.remove("bg-Gray", "p-2", "rounded-lg");
 
         var Container = document.querySelector("#ConImageChange");
 
@@ -739,7 +924,8 @@ function multiSelect() {
           DownloadPNG(text);
         } else if (document.getElementById("pngtosvg").innerText === "SVG") {
           donloadSVG(text);
-        }
+        } 
+        
       }
     }
   } else {
@@ -1057,6 +1243,40 @@ function SetColorToIcons(obj) {
   }
 }
 
+function SetColorToIcons3(obj) {
+  var text = obj.value;
+  document.getElementById("ColorPic3").value = text;
+
+  var Items = document.getElementsByClassName("Icon");
+
+  for (let i = 0; i < Items.length; i++) {
+    if (Items[i].getAttribute("stroke")) {
+      Items[i].setAttribute("stroke", text);
+    } else {
+      Items[i].setAttribute("fill", text);
+    }
+    GetBackColorToColorfulIcons();
+    if (
+      document
+        .getElementById("mycolorful")
+        .parentElement.classList.contains("Font14")
+    ) {
+      for (var i1 = 0; i1 < Items.length; i1++) {
+        var Colorful = Items[i1]
+          .getElementsByClassName("Icons_Button_Slider")[0]
+          .getElementsByTagName("svg")[1];
+        var IconSvg =
+          Items[i1].firstChild.nextElementSibling.getElementsByTagName(
+            "svg"
+          )[0];
+
+        Colorful = Colorful.cloneNode(true);
+        IconSvg.replaceWith(Colorful);
+      }
+    }
+  }
+}
+
 function SetColorToIcons2(obj) {
   var text = obj.value;
   document.getElementById("ColorPic2").value = text;
@@ -1072,7 +1292,7 @@ function SetColorToIcons2(obj) {
 
 // ===============================================================
 
-// Change Size Svg To 64px with reflash
+// Change Size Svg To 40px with reflash
 
 var input = document.getElementsByClassName("rangeSize")[0];
 var size = input.value + "px";
@@ -1209,7 +1429,7 @@ function resetForm() {
   var color = document.getElementById("SetColorToIcon").value;
   var ItemClick = document.getElementsByClassName("Switch1");
 
-  document.getElementById("showSize").innerHTML = "64px";
+  document.getElementById("showSize").innerHTML = "40px";
   document.getElementById("showStroke").innerHTML = "1px";
 
   // Reset Size
@@ -1220,8 +1440,8 @@ function resetForm() {
     for (let j = 0; j < svgs.length; j++) {
       var svg = svgs[j];
 
-      svg.style.width = "64px";
-      svg.style.height = "64px";
+      svg.style.width = "40px";
+      svg.style.height = "40px";
     }
   }
 
@@ -1233,8 +1453,8 @@ function resetForm() {
       for (let j = 0; j < svgs.length; j++) {
         var svg = svgs[j];
 
-        svg.style.width = "64px";
-        svg.style.height = "64px";
+        svg.style.width = "40px";
+        svg.style.height = "40px";
       }
     }
   }
@@ -1415,28 +1635,33 @@ btn.addEventListener("click", async () => {
   }
 });
 
-const ShareSvg = {
-  title: "ICONPAQ",
-  text: document.getElementById("Component_Code").innerText,
-};
-
-const btn1 = document.querySelector("#ShareIconSVG");
-
-// Share must be triggered by "user activation"
-btn1.addEventListener("click", async () => {
+async function ShareSVGCode() {
+  const ShareSvg = {
+    title: "ICONPAQ",
+    text: document.getElementById("Component_Code").innerText,
+  };
   try {
     await navigator.share(ShareSvg);
   } catch (err) {
     alert(`Error: ${err}`);
   }
-});
+}
 
 if (localStorage.getItem("CheckTheme") == 0) {
   document.getElementById("MyTheme").href = "Assets/css/index_Dark.css";
 
   document.getElementById("introimage").src = "Assets/img/Intro_Image1.png";
+  if(document.getElementById("SetColorToIcon3"))
+  {
+    document.getElementById("SetColorToIcon3").value = "#f2f2f8";
+    document.getElementById("ColorPic3").value = "#f2f2f8";
+  }
+
   document.getElementById("SetColorToIcon").value = "#f2f2f8";
   document.getElementById("ColorPic").value = "#f2f2f8";
+  document.getElementById("ColorPic2").value = "#f2f2f8";
+  document.getElementById("SetColorToIcon2").value = "#f2f2f8";
+
   document.getElementById("changeicontheme").className = "";
   document.getElementById("svgicontheme").style.display = "inline-block";
 
@@ -1493,7 +1718,14 @@ if (localStorage.getItem("CheckTheme") == 0) {
 
   CheckTheme = false;
   document.getElementById("introimage").src = "Assets/img/Intro_Image.png";
+  if(document.getElementById("SetColorToIcon3"))
+  {
+    document.getElementById("SetColorToIcon3").value = "#56566F";
+    document.getElementById("ColorPic3").value = "#56566F";
+  }
   document.getElementById("SetColorToIcon").value = "#56566F";
+  document.getElementById("SetColorToIcon2").value = "#56566F";
+  document.getElementById("ColorPic2").value = "#56566F";
   document.getElementById("ColorPic").value = "#56566F";
 
   count1 = 0;
