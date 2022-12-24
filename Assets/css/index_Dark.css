@@ -305,7 +305,7 @@ footer .Footer_SocialMedia img {
 }
 @media only screen and (max-width: 600px) {
 	
-		
+
 		
 		
 		
@@ -366,6 +366,34 @@ border-radius: 0px !important;
   .customizeforphone .closemodal {
   background: transparent !important;
 }
+
+.menu-modal
+{
+  width: 100vw !important;
+  height: 100vh !important;
+  position: absolute;
+  height: 100vh !important;
+  right: 0px !important;
+  left: 0px !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  margin: 0px !important;
+
+}
+
+.sizemobile
+{
+  width: 100vw !important;
+  height: 100vh !important;
+  position: absolute;
+  height: 100vh !important;
+  right: 0px !important;
+  left: 0px !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  margin: 0px !important;
+}
+
 }
 
 #ConImageChange {
@@ -565,7 +593,19 @@ header .Active_Item_MainMenu::before {
 }
 
 
+.nav-item1_New
+{
+  width: 100vw !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold !important;
+}
 
+.Item_Menu_Small
+{
+  border-left: px solid #685AD3;
+}
 
 
 

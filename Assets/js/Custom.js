@@ -241,9 +241,12 @@ function ChangeTheme_Index(obj) {
       document.getElementById("SetColorToIcon3").value = "#f2f2f8";
       document.getElementById("ColorPic3").value = "#f2f2f8";
     }
-    
-    obj.getElementsByTagName("i")[0].className = "";
+
+    document.getElementById("changeicontheme_SmallMenu").className = "";
+    document.getElementById("changeicontheme").className = "";
+
     document.getElementById("svgicontheme").style.display = "inline-block";
+    document.getElementById("svgicontheme1").style.display = "inline-block";
     var path = document.getElementsByTagName("path");
     var svg = document.getElementsByTagName("svg");
 
@@ -313,8 +316,12 @@ function ChangeTheme_Index(obj) {
     document.getElementById("ColorPic2").value = "#56566F";
     document.getElementById("SetColorToIcon2").value = "#56566F";
     count1 = 0;
-    obj.getElementsByTagName("i")[0].className = "fa fa-moon-o";
+
+    document.getElementById("changeicontheme_SmallMenu").className = "fa fa-moon-o";
+    document.getElementById("changeicontheme").className = "fa fa-moon-o";
+
     document.getElementById("svgicontheme").style.display = "none";
+    document.getElementById("svgicontheme1").style.display = "none";
     var path = document.getElementsByTagName("path");
 
     for (let i = 0; i < path.length; i++) {
@@ -1635,6 +1642,18 @@ btn.addEventListener("click", async () => {
   }
 });
 
+
+const btn1 = document.querySelector("#ShareLink1");
+
+// Share must be triggered by "user activation"
+btn1.addEventListener("click", async () => {
+  try {
+    await navigator.share(shareData);
+  } catch (err) {
+    alert(`Error: ${err}`);
+  }
+});
+
 async function ShareSVGCode() {
   const ShareSvg = {
     title: "ICONPAQ",
@@ -1662,8 +1681,11 @@ if (localStorage.getItem("CheckTheme") == 0) {
   document.getElementById("ColorPic2").value = "#f2f2f8";
   document.getElementById("SetColorToIcon2").value = "#f2f2f8";
 
+  document.getElementById("changeicontheme_SmallMenu").className = "";
   document.getElementById("changeicontheme").className = "";
+
   document.getElementById("svgicontheme").style.display = "inline-block";
+  document.getElementById("svgicontheme1").style.display = "inline-block";
 
   var path = document.getElementsByTagName("path");
   var svg = document.getElementsByTagName("svg");
@@ -1730,8 +1752,10 @@ if (localStorage.getItem("CheckTheme") == 0) {
 
   count1 = 0;
 
+  document.getElementById("changeicontheme_SmallMenu").className = "fa fa-moon-o";
   document.getElementById("changeicontheme").className = "fa fa-moon-o";
   document.getElementById("svgicontheme").style.display = "none";
+  document.getElementById("svgicontheme1").style.display = "none";
   var path = document.getElementsByTagName("path");
 
   for (let i = 0; i < path.length; i++) {
@@ -1765,4 +1789,20 @@ if (localStorage.getItem("CheckTheme") == 0) {
       IconSvg.replaceWith(Colorful);
     }
   }
+}
+
+
+
+function ChangeItemMenu_Small(obj){
+
+  var con = document.getElementById("consmallmenu").getElementsByTagName("li");
+
+  for (let i = 0; i < con.length; i++) {
+    if(con[i].classList.contains("Item_Menu_Small"))
+    {
+      con[i].classList.remove("Item_Menu_Small");
+    }    
+  }
+
+  obj.classList.add("Item_Menu_Small");
 }
