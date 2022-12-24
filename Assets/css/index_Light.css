@@ -248,6 +248,14 @@ main .Container_Icons .Icon_Pack-1 div {
     height: 175px;
   }
 
+
+
+  .Con_img_Alert
+  {
+    height: 270px;
+  }
+  
+
 @media only screen and (min-width: 992px) {
   .w-lg-auto {
     width: auto !important;
@@ -280,6 +288,34 @@ main .Container_Icons .Icon_Pack-1 div {
   justify-content: center;
   align-items: center;
 }
+
+  
+.Intro 
+{
+  height: 407px;
+}
+
+.Alert_Body
+{
+  position: relative;
+    z-index: 1;
+}
+
+.Con_img_Alert
+{
+  height: 209px !important;
+  position: absolute !important;
+  right: -16px !important;
+  bottom: 0px !important;
+}
+
+.Con_Btn_Alert
+{
+  z-index: 999999;
+  margin-top: 96px;
+}
+
+
 }
 @media only screen and (max-width: 768px) {
   main .Container_Icons {
@@ -706,5 +742,13 @@ header .Active_Item_MainMenu::before {
     border-left: 10px solid #685AD3;
   }
   
-  
+
+
+
+
+
+
+
+
+
 

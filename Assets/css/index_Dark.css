@@ -221,9 +221,9 @@ footer .Footer_SocialMedia img {
 }
 
 .mybtn1 {
-		border-radius: 16px !important;
-		overflow: hidden;
-		}
+  border-radius: 16px !important;
+  overflow: hidden;
+}
 @media only screen and (min-width: 992px) {
   .w-lg-auto {
     width: auto !important;
@@ -241,33 +241,37 @@ footer .Footer_SocialMedia img {
     height: 559px !important;
   }
 }
-  main .Container_Icons .Icon_Pack i,
-  main .Container_Icons .Icon_Pack-1 i {
-    font-size: 24px;
-    margin-top: 13px;
-    transition: 0.3s;
-  }
+main .Container_Icons .Icon_Pack i,
+main .Container_Icons .Icon_Pack-1 i {
+  font-size: 24px;
+  margin-top: 13px;
+  transition: 0.3s;
+}
 
-  main .Container_Icons .Icon_Pack:hover i,
-  main .Container_Icons .Icon_Pack-1:hover i {
-    margin-top: 0px;
-  }
-  
-    .customizeforphone
-	{
-		border-radius: 30px;
-		overflow: hidden;
-		}
-		
-		
+main .Container_Icons .Icon_Pack:hover i,
+main .Container_Icons .Icon_Pack-1:hover i {
+  margin-top: 0px;
+}
+
+.customizeforphone {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+
+
+.Con_img_Alert
+{
+  height: 270px;
+}
+
+
 @media only screen and (min-width: 1350px) {
-
   .nav-item1 {
     width: 105px;
     display: flex;
     justify-content: center;
   }
-  
 }
 
 @media only screen and (max-width: 992px) {
@@ -277,21 +281,46 @@ footer .Footer_SocialMedia img {
   main .SideForm {
     height: 559px !important;
   }
-  .ChangeSizeToMobile
-{
-  width: 280px !important;
-  height: 280px !important;
-  max-width: 10000px !important;
-  margin: 0px !important;
-  max-width: 10000px !important;
-}
+  .ChangeSizeToMobile {
+    width: 280px !important;
+    height: 280px !important;
+    max-width: 10000px !important;
+    margin: 0px !important;
+    max-width: 10000px !important;
+  }
 
-.ChangeSizeToMobile i {
-  width: 100% !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .ChangeSizeToMobile i {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Intro 
+  {
+    height: 407px;
+  }
+  
+  .Alert_Body
+  {
+    position: relative;
+      z-index: 1;
+  }
+  
+  .Con_img_Alert
+  {
+    height: 209px !important;
+    position: absolute !important;
+    right: -16px !important;
+    bottom: 0px !important;
+  }
+  
+  .Con_Btn_Alert
+  {
+    z-index: 999999;
+    margin-top: 96px;
+  }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -299,101 +328,92 @@ footer .Footer_SocialMedia img {
     -ms-grid-columns: auto auto auto;
     grid-template-columns: auto auto auto;
   }
-    .searchStyle {
+  .searchStyle {
     width: 55vw !important;
   }
 }
 @media only screen and (max-width: 600px) {
-	
-
-		
-		
-		
-		.mybtn1 {
-		overflow: visible;
-		}
-	
-	.mybtn , .mybtn > * {
-	margin: 0px !important;
-border-radius: 0px !important;
-	}
-	
-	main .MultipleSelect_Menu {
-  	width: 100vw !important;
-  padding: 0px !important;
-  top: auto !important;
-  bottom: -17px !important;
-  left:0px;
-  right:0px;
-  background: transparent;
-  border: 0px;
-  border-radius: 0px !important;
+  .mybtn1 {
+    overflow: visible;
   }
-  
-  main .MultipleSelect_Menu span , main .MultipleSelect_Menu small {
-  font-size: 16px !important;	
-  } 
-  
+
+  .mybtn,
+  .mybtn > * {
+    margin: 0px !important;
+    border-radius: 0px !important;
+  }
+
+  main .MultipleSelect_Menu {
+    width: 100vw !important;
+    padding: 0px !important;
+    top: auto !important;
+    bottom: -17px !important;
+    left: 0px;
+    right: 0px;
+    background: transparent;
+    border: 0px;
+    border-radius: 0px !important;
+  }
+
+  main .MultipleSelect_Menu span,
+  main .MultipleSelect_Menu small {
+    font-size: 16px !important;
+  }
+
   .btn1 {
-  	position: absolute;
-      right: 0px;
-       width: 70vw;
-       height: 48px;
-      }
-      
-        .btn2 {
-  	position: absolute; 
-  left:0px;
-      width: 30vw;
-      height: 48px;
-      }
+    position: absolute;
+    right: 0px;
+    width: 70vw;
+    height: 48px;
+  }
+
+  .btn2 {
+    position: absolute;
+    left: 0px;
+    width: 30vw;
+    height: 48px;
+  }
 
   main .Intro {
     border-radius: 0px !important;
   }
-  
-  
-  .customizeforphone
-{
-	width: 100vw !important;
-	height: 100vh !important;
-    margin-left : -8px !important;
+
+  .customizeforphone {
+    width: 100vw !important;
+    height: 100vh !important;
+    margin-left: -8px !important;
     margin-top: -8px !important;
     border-radius: 0px !important;
     overflow: scroll;
-	}
+  }
 
   .customizeforphone .closemodal {
-  background: transparent !important;
-}
+    background: transparent !important;
+  }
 
-.menu-modal
-{
-  width: 100vw !important;
-  height: 100vh !important;
-  position: absolute;
-  height: 100vh !important;
-  right: 0px !important;
-  left: 0px !important;
-  top: 0px !important;
-  bottom: 0px !important;
-  margin: 0px !important;
+  .menu-modal {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute;
+    height: 100vh !important;
+    right: 0px !important;
+    left: 0px !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    margin: 0px !important;
+  }
 
-}
-
-.sizemobile
-{
-  width: 100vw !important;
-  height: 100vh !important;
-  position: absolute;
-  height: 100vh !important;
-  right: 0px !important;
-  left: 0px !important;
-  top: 0px !important;
-  bottom: 0px !important;
-  margin: 0px !important;
-}
-
+  .sizemobile {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute;
+    height: 100vh !important;
+    right: 0px !important;
+    left: 0px !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    margin: 0px !important;
+  }
 }
 
 #ConImageChange {
@@ -512,7 +532,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 18px;
   padding: 12px !important;
   margin-bottom: 3rem !important;
-  max-width: 194px ;
+  max-width: 194px;
 }
 
 .closemodal {
@@ -592,9 +612,7 @@ header .Active_Item_MainMenu::before {
   background-color: #685ad3;
 }
 
-
-.nav-item1_New
-{
+.nav-item1_New {
   width: 100vw !important;
   display: flex;
   justify-content: center;
@@ -602,11 +620,6 @@ header .Active_Item_MainMenu::before {
   font-weight: bold !important;
 }
 
-.Item_Menu_Small
-{
-  border-left: px solid #685AD3;
+.Item_Menu_Small {
+  border-left: px solid #685ad3;
 }
-
-
-
-
