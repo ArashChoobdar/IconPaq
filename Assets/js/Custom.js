@@ -752,14 +752,45 @@ function CancleMultiSelect() {
 function CopyText(obj) {
   var copyText = obj.parentElement.innerText;
   navigator.clipboard.writeText(copyText);
-  alert("Copied text");
+  
+  Toastify({
+  text: "Copied text",
+  className: "info",
+  duration: 3000,
+  style: {
+  borderRadius: "16px",
+ }
+}).showToast();
+
 }
 
 function CopyTextIcon() {
   var copyText = document.getElementById("Component_Code").parentElement;
   navigator.clipboard.writeText(copyText.innerText);
-  alert("Icon Copide :)");
+ 
+ Toastify({
+  text: "Icon Copied :)",
+  className: "info",
+  style: {
+    background: "linear-gradient(to right, #00b09b, #96c93d)",
+    borderRadius: "16px",
+  }
+}).showToast();
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function DownloadPNG(name = "image") {
   var img = new Image();
@@ -773,6 +804,7 @@ function DownloadPNG(name = "image") {
     ctxt.clearRect(0, 0, canvas.width, canvas.height);
     ctxt.drawImage(img, 0, 0);
     var a = document.createElement("a");
+    //console.log(canvas.toDataURL("image/png"));
     a.href = canvas.toDataURL("image/png");
     document.body.appendChild(a);
     a.download = `"${name}".png`;
@@ -784,51 +816,16 @@ function DownloadPNG(name = "image") {
   img.src = "data:image/svg+xml;utf8," + encodeURIComponent(svgText);
 }
 
-function downloadAll() {
-  if (document.getElementsByClassName("Icon_Pack-1").length > 0) {
-    const myitem = document.getElementsByClassName("Icon_Pack-1");
 
-    for (let l = 0; l < myitem.length; l++) {
-      var Container1 = document.querySelector("#ConImageChange");
-      var mySvg1 =
-        myitem[
-          l
-        ].firstChild.nextElementSibling.firstChild.nextElementSibling.getElementsByTagName(
-          "svg"
-        )[0];
-      var copySvg1 = mySvg1.cloneNode(true);
-      var text1 = myitem[l]
-        .getElementsByClassName("Icon_Text")[0]
-        .getElementsByTagName("small")[0].innerHTML;
-      copySvg1.setAttribute("id", "ConImageChange");
 
-      Container1.replaceWith(copySvg1);
-      DownloadPNG(text1);
-    }
-  }
 
-  const items = document.getElementsByClassName("Icon_Pack");
 
-  for (var i = 0; i < items.length; i++) {
-    var Container = document.querySelector("#ConImageChange");
 
-    var mySvg =
-      items[
-        i
-      ].firstChild.nextElementSibling.firstChild.nextElementSibling.getElementsByTagName(
-        "svg"
-      )[0];
-    var copySvg = mySvg.cloneNode(true);
-    var text = items[i]
-      .getElementsByClassName("Icon_Text")[0]
-      .getElementsByTagName("small")[0].innerHTML;
-    copySvg.setAttribute("id", "ConImageChange");
 
-    Container.replaceWith(copySvg);
 
-    DownloadPNG(text);
-  }
-}
+
+
+
 
 function donloadSVG(name = "Icon") {
   var svgEl = document.getElementById("ConImageChange");
@@ -839,17 +836,36 @@ function donloadSVG(name = "Icon") {
     type: "image/svg+xml;charset=utf-8",
   });
   var svgUrl = URL.createObjectURL(svgBlob);
+  console.log(svgUrl);
   var downloadLink = document.createElement("a");
   downloadLink.href = svgUrl;
   downloadLink.download = `"${name}".svg`;
   document.body.appendChild(downloadLink);
   downloadLink.click();
+  console.log(downloadLink);
   document.body.removeChild(downloadLink);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function multiSelect() {
   var myitem = document.getElementsByClassName("MultipleSelect_Menu")[0];
-  myitem.style.display = "none";
+ var zip = new JSZip();
+ myitem.style.display = "none";
   var button1 = document.getElementById("button_MultiSelect1");
 
   var Items = document.getElementsByClassName("Icon_Pack");
@@ -876,8 +892,17 @@ function multiSelect() {
 
   if (button1.classList.contains("bg-Gray")) {
     if (document.getElementsByClassName("Icon_Pack-1").length > 0) {
-      var myitem = document.getElementsByClassName("Icon_Pack-1");
+    
+      var myitem = document.getElementById("Container_Icons").children; 
       button1.classList.remove("bg-Gray", "p-2", "rounded-lg");
+    var count2 =0;
+    
+    for (var i2 = 0; i2 < myitem.length; i2++) {
+    	if (myitem[i2].classList.contains("bg-Gray")) {
+    	++count2;
+}
+    }
+
 
       for (let q = 0; q < myitem.length; q++) {
         if (myitem[q].classList.contains("bg-Gray")) {
@@ -896,18 +921,29 @@ function multiSelect() {
 
           Container1.replaceWith(copySvg1);
           if (document.getElementById("pngtosvg").innerText === "PNG") {
-            DownloadPNG(text1);
+                DownloadPngAsZip(zip , count2, text1 + "_" + (new Date()).getTime());
+       //     DownloadPNG(text1);
           } else if (document.getElementById("pngtosvg").innerText === "SVG") {
-            donloadSVG(text1);
+         DownloadSvgAsZip(zip , count2 , text1 + "_" + (new Date()).getTime());
+   // donloadSVG(text1);
           }
         }
         
       }
 
     }
+    else {
 
     var items = document.getElementsByClassName("Icon_Pack");
+    var count =0;
+    
+    for (var i1 = 0; i1 < items.length; i1++) {
+    	if (items[i1].classList.contains("bg-Gray")) {
+    	++count;
+}
+    }
 
+    
     for (var i = 0; i < items.length; i++) {
       if (items[i].classList.contains("bg-Gray")) {
         items[i].classList.remove("bg-Gray");
@@ -926,18 +962,37 @@ function multiSelect() {
         copySvg.setAttribute("id", "ConImageChange");
 
         Container.replaceWith(copySvg);
-
+       
         if (document.getElementById("pngtosvg").innerText === "PNG") {
-          DownloadPNG(text);
+    console.log(count);
+   //   DownloadPNG(text);
+          DownloadPngAsZip(zip , count, text);
         } else if (document.getElementById("pngtosvg").innerText === "SVG") {
-          donloadSVG(text);
+      DownloadSvgAsZip(zip , count , text);
+     //  donloadSVG(text);
         } 
         
       }
     }
-  } else {
+    }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function SwitchColor1(obj) {
   var Check = obj.innerText.toUpperCase();
@@ -1627,7 +1682,7 @@ function SwitchSvgPng() {
 
 const shareData = {
   title: "ICONPAQ",
-  text: "Open source, high quality and free icon library with over 300",
+  text: "ICONPAQ\nOpen source, high quality and free icon library with over 300\n\n",
   url: window.location.href.toString(),
 };
 
@@ -1638,7 +1693,15 @@ btn.addEventListener("click", async () => {
   try {
     await navigator.share(shareData);
   } catch (err) {
-    alert(`Error: ${err}`);
+  	Toastify({
+  text: "Something went wrong!",
+  className: "info",
+  style: {
+    background: "linear-gradient(to right, #FF6464, #FF7D7D)",
+    borderRadius: "16px",
+  }
+}).showToast();
+    
   }
 });
 
@@ -1650,7 +1713,14 @@ btn1.addEventListener("click", async () => {
   try {
     await navigator.share(shareData);
   } catch (err) {
-    alert(`Error: ${err}`);
+    Toastify({
+  text: "Something went wrong!",
+  className: "info",
+  style: {
+    background: "linear-gradient(to right, #FF6464, #FF7D7D)",
+    borderRadius: "16px",
+  }
+}).showToast();
   }
 });
 
@@ -1662,7 +1732,14 @@ async function ShareSVGCode() {
   try {
     await navigator.share(ShareSvg);
   } catch (err) {
-    alert(`Error: ${err}`);
+    Toastify({
+  text: "Something went wrong!",
+  className: "info",
+  style: {
+    background: "linear-gradient(to right, #FF6464, #FF7D7D)",
+    borderRadius: "16px",
+  }
+}).showToast();
   }
 }
 
@@ -1806,3 +1883,85 @@ function ChangeItemMenu_Small(obj){
 
   obj.classList.add("Item_Menu_Small");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var countPng =0;
+
+function DownloadPngAsZip(zip , getCount , name){
+        var img = new Image();
+        img.crossOrigin = 'Anonymous';
+        
+        img.onload = function () {
+        var canvas = document.createElement("canvas");
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        var ctxt = canvas.getContext("2d");
+        ctxt.fillStyle = "#fff";
+        ctxt.fillRect(0, 0, canvas.width, canvas.height);
+        ctxt.clearRect(0, 0, canvas.width, canvas.height);
+        ctxt.drawImage(img, 0, 0);
+    
+        var dataURL = canvas.toDataURL("image/png");
+        var base64String = dataURL.replace("data:image/png;base64,", "");
+    
+    
+            zip.file("Icons/"+name +".png", base64String, {base64: true});
+            ++countPng;
+if(countPng == getCount)
+{
+	zip.file("Icons/ICONPAQ.txt", "Thanks For Use Us Icons , Enjoy it ❤️ \n\nCount Of Icon Downloaded :  "+getCount+" Icon\n \nType :  PNG\n\n\nICONPAQ.COM :)");
+	zip.generateAsync({type:"blob"}).then(function(content) {
+                        saveAs(content, "Icons.zip");
+             });
+             countPng = 0;
+	}
+                  
+  }; 
+  var innerSvg = document.querySelector("#ConImageChange");
+  var svgText = new XMLSerializer().serializeToString(innerSvg);
+  img.src = "data:image/svg+xml;utf8," + encodeURIComponent(svgText);
+        
+    } 
+
+
+
+var countSvg =0;
+
+function DownloadSvgAsZip(zip , getCount , name) {
+var svgElement = document.getElementById('ConImageChange');
+var svgString = new XMLSerializer().serializeToString(svgElement);
+var decoded = unescape(encodeURIComponent(svgString));
+var base64String = btoa(decoded);
+	
+	zip.file("Icons/"+name +".svg", base64String, {base64: true});
+            ++countSvg;
+if(countSvg == getCount)
+{
+	zip.file("Icons/ICONPAQ.txt", "Thanks For Use Us Icons , Enjoy it ❤️ \n\nCount Of Icon Downloaded :  "+getCount+" Icon\n \nType :  SVG\n\n\nICONPAQ.COM :)");
+	zip.generateAsync({type:"blob"}).then(function(content) {
+                        saveAs(content, "Icons.zip");
+             });
+             countSvg = 0;
+	}
+	
+}
+
+
+
+
+

@@ -239,30 +239,44 @@ main .Container_Icons .Icon_Pack-1 div {
   border-radius: 11px !important;
 }
 
-  main .Container_Icons .Icon_Pack div,
-  main .Container_Icons .Icon_Pack-1 div {
-    height: 81.5px;
-  }
-  main .Container_Icons .Icon_Pack i,
-  main .Container_Icons .Icon_Pack-1 i {
-    height: 175px;
-  }
+main .Container_Icons .Icon_Pack div,
+main .Container_Icons .Icon_Pack-1 div {
+  height: 81.5px;
+}
+main .Container_Icons .Icon_Pack i,
+main .Container_Icons .Icon_Pack-1 i {
+  height: 175px;
+}
 
+.Con_img_Alert {
+  height: 270px;
+}
 
+.ChangeSizeForMobile {
+  height: 305px;
+  resize: none;
+  font-size: 13px;
+  overflow-wrap: break-word;
+  border-radius: 13px;
+  max-height: 294px;
+  height: 305px;
+}
 
-  .Con_img_Alert
-  {
-    height: 270px;
-  }
-  
 
 @media only screen and (min-width: 992px) {
   .w-lg-auto {
     width: auto !important;
   }
-
 }
 @media only screen and (max-width: 992px) {
+
+  
+
+.ChangeSizeForMobile {
+  max-height: 131px !important;
+}
+
+
   .w-lg-100 {
     width: 100% !important;
   }
@@ -273,49 +287,41 @@ main .Container_Icons .Icon_Pack-1 div {
   main .SideForm {
     height: 559px !important;
   }
-  .ChangeSizeToMobile
-{
-  width: 280px !important;
-  height: 280px !important;
-  max-width: 10000px !important;
-  margin: 0px !important;
-  max-width: 10000px !important;
-}
+  .ChangeSizeToMobile {
+    width: 280px !important;
+    height: 280px !important;
+    max-width: 10000px !important;
+    margin: 0px !important;
+    max-width: 10000px !important;
+  }
 
-.ChangeSizeToMobile i {
-  width: 100% !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .ChangeSizeToMobile i {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-  
-.Intro 
-{
-  height: 407px;
-}
+  .Intro {
+    height: 407px;
+  }
 
-.Alert_Body
-{
-  position: relative;
+  .Alert_Body {
+    position: relative;
     z-index: 1;
-}
+  }
 
-.Con_img_Alert
-{
-  height: 209px !important;
-  position: absolute !important;
-  right: -16px !important;
-  bottom: 0px !important;
-}
+  .Con_img_Alert {
+    height: 209px !important;
+    position: absolute !important;
+    right: -16px !important;
+    bottom: 0px !important;
+  }
 
-.Con_Btn_Alert
-{
-  z-index: 999999;
-  margin-top: 96px;
-}
-
-
+  .Con_Btn_Alert {
+    z-index: 999999;
+    margin-top: 96px;
+  }
 }
 @media only screen and (max-width: 768px) {
   main .Container_Icons {
@@ -429,17 +435,16 @@ input[type="range"]::-webkit-slider-thumb {
   overflow: hidden;
 }
 
+main .Container_Icons .Icon_Pack:hover i,
+main .Container_Icons .Icon_Pack-1:hover i {
+  margin-top: 0px;
+}
 
-  main .Container_Icons .Icon_Pack:hover i,
-  main .Container_Icons .Icon_Pack-1:hover i {
-    margin-top: 0px;
-  }
-  
-   .mybtn1 {
-		border-radius: 16px !important;
-		overflow: hidden;
-		}
-  
+.mybtn1 {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
 @media only screen and (min-width: 1350px) {
   .ChangeSizeLg {
     height: 502px;
@@ -448,9 +453,7 @@ input[type="range"]::-webkit-slider-thumb {
   main .MultipleSelect_Menu {
     top: 80vh;
   }
-  
 
- 
   .nav-item1 {
     width: 105px;
     display: flex;
@@ -458,24 +461,22 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 main .Container_Icons .Icon_Pack i,
-  main .Container_Icons .Icon_Pack-1 i {
-    font-size: 24px;
-    margin-top: 13px;
-    transition: 0.3s;
-  }
-  .customizeforphone
-	{
-		border-radius: 30px;
-		overflow: hidden;
-		}
-     .closemodal
-    {
-      background-color: #f2f2f8 !important;
-    }
-    .changesizesvgclose
-    {
-      width: 13px; height: 13px;
-    }
+main .Container_Icons .Icon_Pack-1 i {
+  font-size: 24px;
+  margin-top: 13px;
+  transition: 0.3s;
+}
+.customizeforphone {
+  border-radius: 30px;
+  overflow: hidden;
+}
+.closemodal {
+  background-color: #f2f2f8 !important;
+}
+.changesizesvgclose {
+  width: 13px;
+  height: 13px;
+}
 @media only screen and (max-width: 1350px) {
   .w-lg-100 {
     width: 100% !important;
@@ -492,104 +493,92 @@ main .Container_Icons .Icon_Pack i,
 }
 
 @media only screen and (max-width: 503px) {
-	
-	
-
-	
-		
-		
-		
-		
-		.mybtn1 {
-		overflow: visible;
-		}
-	
-	.mybtn , .mybtn > * {
-	margin: 0px !important;
-border-radius: 0px !important;
-	}
-	
-	main .MultipleSelect_Menu {
-  	width: 100vw !important;
-  padding: 0px !important;
-  top: auto !important;
-  bottom: -17px !important;
-  left:0px;
-  right:0px;
-  background: transparent;
-  border: 0px;
-  border-radius: 0px !important;
+  .mybtn1 {
+    overflow: visible;
   }
-  
-  main .MultipleSelect_Menu span , main .MultipleSelect_Menu small {
-  font-size: 16px !important;	
-  } 
-  
+
+  .mybtn,
+  .mybtn > * {
+    margin: 0px !important;
+    border-radius: 0px !important;
+  }
+
+  main .MultipleSelect_Menu {
+    width: 100vw !important;
+    padding: 0px !important;
+    top: auto !important;
+    bottom: -17px !important;
+    left: 0px;
+    right: 0px;
+    background: transparent;
+    border: 0px;
+    border-radius: 0px !important;
+  }
+
+  main .MultipleSelect_Menu span,
+  main .MultipleSelect_Menu small {
+    font-size: 16px !important;
+  }
+
   .btn1 {
-  	position: absolute;
-      right: 0px;
-       width: 70vw;
-       height: 48px;
-      }
-      
-        .btn2 {
-  	position: absolute; 
-  left:0px;
-      width: 30vw;
-      height: 48px;
-      }
-	
-	
+    position: absolute;
+    right: 0px;
+    width: 70vw;
+    height: 48px;
+  }
+
+  .btn2 {
+    position: absolute;
+    left: 0px;
+    width: 30vw;
+    height: 48px;
+  }
+
   .changesize > * {
     font-size: 12px !important;
   }
-  
-	.changesizesvgclose
-{
-  width: 16px; height: 16px;
-}
-	
-.customizeforphone
-{
-	width: 100vw !important;
-	height: 100vh !important;
-    margin-left : -8px !important;
+
+  .changesizesvgclose {
+    width: 16px;
+    height: 16px;
+  }
+
+  .customizeforphone {
+    width: 100vw !important;
+    height: 100vh !important;
+    margin-left: -8px !important;
     margin-top: -8px !important;
     border-radius: 0px !important;
     overflow: scroll;
-	}
+  }
 
   .customizeforphone .closemodal {
-  background: transparent !important;
-}
+    background: transparent !important;
+  }
 
-.menu-modal
-{
-  width: 100vw !important;
-  height: 100vh !important;
-  position: absolute;
-  height: 100vh !important;
-  right: 0px !important;
-  left: 0px !important;
-  top: 0px !important;
-  bottom: 0px !important;
-  margin: 0px !important;
+  .menu-modal {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute;
+    height: 100vh !important;
+    right: 0px !important;
+    left: 0px !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    margin: 0px !important;
+  }
 
-}
-
-.sizemobile
-{
-  width: 100vw !important;
-  height: 100vh !important;
-  position: absolute;
-  height: 100vh !important;
-  right: 0px !important;
-  left: 0px !important;
-  top: 0px !important;
-  bottom: 0px !important;
-  margin: 0px !important;
-}
-  
+  .sizemobile {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute;
+    height: 100vh !important;
+    right: 0px !important;
+    left: 0px !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    margin: 0px !important;
+  }
 }
 
 .SocialMediaIcon_Navbar1 {
@@ -630,7 +619,7 @@ border-radius: 0px !important;
   border-radius: 18px;
   padding: 12px !important;
   margin-bottom: 3rem !important;
-  max-width: 194px ;
+  max-width: 194px;
 }
 
 .closemodal {
@@ -640,7 +629,7 @@ border-radius: 0px !important;
   padding: 9px !important;
   padding-top: 6px !important;
   background: #f2f2f8;
-  border-radius: 30px 0px 14px ;
+  border-radius: 30px 0px 14px;
   cursor: pointer;
   z-index: 99999999999999;
 }
@@ -720,35 +709,18 @@ header .Active_Item_MainMenu::before {
   background-color: #685ad3;
 }
 
-.changecolordropdown
-{
-	background: #fff !important;
-	}  
-	
-	
-	
+.changecolordropdown {
+  background: #fff !important;
+}
 
-  .nav-item1_New
-  {
-    width: 100vw !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold !important;
-  }
-  
-  .Item_Menu_Small
-  {
-    border-left: 10px solid #685AD3;
-  }
-  
+.nav-item1_New {
+  width: 100vw !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold !important;
+}
 
-
-
-
-
-
-
-
-
-
+.Item_Menu_Small {
+  border-left: 10px solid #685ad3;
+}

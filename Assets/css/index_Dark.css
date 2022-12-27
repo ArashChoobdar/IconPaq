@@ -225,6 +225,8 @@ footer .Footer_SocialMedia img {
   overflow: hidden;
 }
 @media only screen and (min-width: 992px) {
+
+  
   .w-lg-auto {
     width: auto !important;
   }
@@ -265,6 +267,16 @@ main .Container_Icons .Icon_Pack-1:hover i {
   height: 270px;
 }
 
+.ChangeSizeForMobile {
+  height: 305px;
+  resize: none;
+  font-size: 13px;
+  overflow-wrap: break-word;
+  border-radius: 13px;
+  max-height: 294px;
+  height: 305px;
+}
+
 
 @media only screen and (min-width: 1350px) {
   .nav-item1 {
@@ -275,6 +287,11 @@ main .Container_Icons .Icon_Pack-1:hover i {
 }
 
 @media only screen and (max-width: 992px) {
+
+
+.ChangeSizeForMobile {
+  max-height: 131px !important;
+}
   .w-lg-100 {
     width: 100% !important;
   }

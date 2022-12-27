@@ -12,6 +12,8 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
+    <!-- // ToastifyJs Cdn -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- // Custom Style -->
     <link rel="stylesheet" href="Assets/css/index_Light.css" />
     <link rel="stylesheet" href="Assets/css/index_Light.css" id="MyTheme" />
@@ -21,7 +23,7 @@
     <div class="container-fluid p-0" id="Container">
       <header class="navbar navbar-expand-lg justify-content-between">
         <i
-          class="fa fa-bars d-lg-none navbar-toggler"
+          class="fa fa-bars d-lg-none navbar-toggler d-none"
           type="button"
           data-toggle="modal"
           data-target="#exampleModalmenu"
@@ -29,7 +31,7 @@
           aria-label="Toggle navigation"
         ></i>
 
-        <a class="navbar-brand ml-4 ml-lg-0 mt-3 mt-lg-0" href="#">
+        <a class="navbar-brand ml-2 ml-lg-0 mt-2 mt-lg-0" href="#">
           <img
             src="./Assets/img/logo.png"
             width="130"
@@ -78,7 +80,7 @@
           class="collapse navbar-collapse d-lg-flex justify-content-center"
           id="navbarNav"
         >
-          <ul class="navbar-nav" id="buttom_Line_Menu">
+          <ul class="navbar-nav d-none" id="buttom_Line_Menu">
             <li class="nav-item nav-item1 mx-lg-2  Active_Item_MainMenu">
               <a
                 class="nav-link"
@@ -197,11 +199,12 @@
 
 
 
-                <div
+                <a
 
                   class="d-flex justify-content-center align-items-center Pointer border-style mx-0"
-
-                  onclick="downloadAll()"
+href="Assets/IconsFile/Iconpaq.zip"
+download 
+                 
 
                 >
 
@@ -217,7 +220,7 @@
 
                   <small class="m-0 ml-1">Download All</small>
 
-                </div>
+                </a>
 
               </div>
 
@@ -758,7 +761,7 @@
 
 
 
-                <div class="mt-4 d-flex flex-column align-items-center w-100">
+                <div class="mt-4 d-none flex-column align-items-center w-100">
 
                   <button
 
@@ -1123,7 +1126,7 @@
 
                 </ul>
 
-                <div class="mt-4 d-flex flex-column align-items-center w-100">
+                <div class="mt-4 d-none flex-column align-items-center w-100">
                   <button
                     class="btn w-100 d-flex justify-content-center align-items-center border rounded-lg mb-3"
                     style="border-radius: 16px !important; border: 1px solid #685AD3 !important; "
@@ -1183,9 +1186,10 @@
                   <small class="m-0 mx-2 mr-3">Multi Select</small>
                 </div>
 
-                <div
+                <a
                   class="d-flex justify-content-center align-items-center Pointer border-style"
-                  onclick="downloadAll()"
+                  href="Assets/IconsFile/Iconpaq.zip"
+download 
                 >
                 <svg  viewBox="-10 -11 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.37152 3.67217C2.24567 4.00801 2.15887 4.38388 2.11074 4.80015H2.10511C2.11495 4.84861 2.12012 4.89878 2.12012 4.95015C2.12012 5.36436 1.78433 5.70015 1.37012 5.70015C0.955904 5.70015 0.620117 5.36436 0.620117 4.95015C0.620117 4.85081 0.639429 4.75599 0.674503 4.66922C0.68587 4.57221 0.699016 4.47539 0.713938 4.37881C0.772169 4.00376 0.865008 3.63489 0.991281 3.27696C1.10882 2.94529 1.26127 2.62702 1.44602 2.32753C1.62369 2.04089 1.83363 1.77558 2.07177 1.53678C2.31056 1.29864 2.57588 1.08866 2.86252 0.910982C3.162 0.726196 3.4803 0.573766 3.812 0.456265C4.16992 0.32995 4.53878 0.237113 4.91385 0.178943C5.32633 0.115147 5.74315 0.0837336 6.16053 0.0849976H15.8206C16.238 0.0837336 16.6548 0.115147 17.0673 0.178943C17.4423 0.237113 17.8112 0.32995 18.1691 0.456265C18.5008 0.573766 18.8191 0.726196 19.1186 0.910982C19.4052 1.08866 19.6706 1.29864 19.9093 1.53678C20.1475 1.77558 20.3574 2.04089 20.5351 2.32753C20.7198 2.62702 20.8723 2.94529 20.9898 3.27696C21.1161 3.63489 21.2089 4.00376 21.2672 4.37881C21.331 4.79177 21.3623 5.2091 21.3609 5.62695V12.3737C21.3623 12.7916 21.331 13.209 21.2672 13.622C21.2089 13.9971 21.1161 14.3659 20.9898 14.7239C20.8723 15.0555 20.7198 15.3738 20.5351 15.6733C20.3574 15.9599 20.1474 16.2252 19.9093 16.464C19.6706 16.7022 19.4052 16.9121 19.1186 17.0898C18.8191 17.2746 18.5008 17.427 18.1691 17.5445C17.8112 17.6708 17.4423 17.7637 17.0673 17.8219C16.6543 17.8857 16.2369 17.917 15.8191 17.9156H12.8098C12.758 17.9269 12.7051 17.9325 12.6521 17.9325C12.5551 17.9325 12.459 17.9134 12.3694 17.8762C12.2798 17.8391 12.1984 17.7847 12.1298 17.7161C12.0613 17.6475 12.0069 17.5661 11.9697 17.4765C11.9326 17.3869 11.9135 17.2908 11.9135 17.1939C11.9135 16.998 11.9914 16.8101 12.1299 16.6716C12.2684 16.5331 12.4562 16.4553 12.6521 16.4553C12.7011 16.4553 12.75 16.4601 12.7981 16.4697H15.8191C18.5754 16.4697 19.9154 15.1299 19.9154 12.3737V5.62687C19.9154 4.86864 19.814 4.21761 19.6096 3.67217C19.587 3.63681 19.5675 3.59939 19.5512 3.56028L19.5474 3.56195C18.9852 2.19528 17.7595 1.53079 15.8002 1.53079H6.1809C4.22163 1.53079 2.99596 2.19528 2.43367 3.56195L2.42987 3.56028C2.41366 3.59939 2.39411 3.63681 2.37152 3.67217Z" fill="#56566F"/>
@@ -1193,7 +1197,7 @@
                   </svg>
                   
                   <small class="m-0 ml-1">Download All</small>
-                </div>
+                </a>
               </div>
 
 
@@ -3233,7 +3237,7 @@ class="w-100 rounded-lg p-1 d-flex flex-column align-items-center"
                 >
                   <div
                     
-					class="d-flex flex-column align-items-start ss"
+					class="d-none flex-column align-items-start ss"
                     style="margin-top: -20px;"
                   >
                     <small style="font-size: 12px" class="ml-1" >Input Groupe Example</small>
@@ -3246,7 +3250,7 @@ class="w-100 rounded-lg p-1 d-flex flex-column align-items-center"
                     </label>
                   </div>
 
-                  <div  class="d-flex flex-column align-items-start mt-4 ss">
+                  <div  class="d-none flex-column align-items-start mt-4 ss">
                     <small style="font-size: 12px" class="ml-1" >SVG Code</small
                     >
                     <label
@@ -3265,11 +3269,10 @@ class="w-100 rounded-lg p-1 d-flex flex-column align-items-center"
                     </label>
                   </div>
 
-                  <div class="d-flex flex-column align-items-start mt-3 ss">
+                  <div class="d-flex flex-column align-items-start ss">
                     <small style="font-size: 12px" class="ml-1" >Component Code</small>
                     <div
-                      style="height: 305px; resize: none; font-size: 13px;  overflow-wrap: break-word; border-radius: 13px; max-height: 131px !important;"
-                      class="w-100 form-control form-text bg-Gray mt-1 d-flex justify-content-between border-0 align-items-start overflow-hidden"
+                      class="w-100 form-control form-text bg-Gray mt-1 d-flex justify-content-between border-0 align-items-start overflow-hidden ChangeSizeForMobile"
                     >
                       <p class="m-0 mt-1" id="Component_Code"
                       style="max-height:295px;max-width:138px;text-overflow: ellipsis;white-space: wrap;overflow:hidden;">
@@ -3634,7 +3637,7 @@ class="w-100 rounded-lg p-1 d-flex flex-column align-items-center"
         </section>
 
         <section
-          class="d-flex justify-content-between align-items-center border-top pt-4 pb-4 px-5 flex-column flex-md-row"
+          class="d-none justify-content-between align-items-center border-top pt-4 pb-4 px-5 flex-column flex-md-row"
         >
           <h6><span class="Bold">ICONPAQ </span>All rights reserved 2022</h6>
           <div class="d-flex mt-2 mt-md-0 changesize">
@@ -3668,7 +3671,13 @@ class="w-100 rounded-lg p-1 d-flex flex-column align-items-center"
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- // FontAwesome CDN -->
     <script src="https://use.fontawesome.com/a020051675.js"></script>
-    <!-- // Custom Js -->
+    <!-- // File Save Cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- // Js Zip Cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- // ToastifyJs -->
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+   <!-- // Custom Js -->
     <script src="Assets/js/Custom.js"></script>
 
   </body>
