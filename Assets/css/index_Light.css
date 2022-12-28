@@ -262,20 +262,15 @@ main .Container_Icons .Icon_Pack-1 i {
   height: 305px;
 }
 
-
 @media only screen and (min-width: 992px) {
   .w-lg-auto {
     width: auto !important;
   }
 }
 @media only screen and (max-width: 992px) {
-
-  
-
-.ChangeSizeForMobile {
-  max-height: 131px !important;
-}
-
+  .ChangeSizeForMobile {
+    max-height: 131px !important;
+  }
 
   .w-lg-100 {
     width: 100% !important;
@@ -399,7 +394,7 @@ main .Container_Icons .Icon_Pack-1:hover .Utils {
 
 input[type="range"] {
   width: 100%;
-  height: 4px;
+  height: 3px;
   cursor: pointer;
   appearance: none;
   border-radius: 9999px;
@@ -468,7 +463,7 @@ main .Container_Icons .Icon_Pack-1 i {
 }
 .customizeforphone {
   border-radius: 30px;
-  overflow: hidden;
+  overflow: auto;
 }
 .closemodal {
   background-color: #f2f2f8 !important;
@@ -602,7 +597,7 @@ main .Container_Icons .Icon_Pack-1 i {
 
 .Top_Style {
   border: 2px solid #685ad3;
-  padding: 5px 6px !important;
+  padding: 5px 5.6px !important;
   border-radius: 46px !important;
   position: relative;
 }
@@ -723,4 +718,46 @@ header .Active_Item_MainMenu::before {
 
 .Item_Menu_Small {
   border-left: 10px solid #685ad3;
+}
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.Component_Code_text::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.Component_Code_text {
+  overflow-y: scroll !important;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.input-color-container {
+  position: relative;
+  overflow: hidden;
+  width: 60px;
+  height: 40px;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.input-color-container_Small {
+  position: relative;
+  overflow: hidden;
+  width: 41px;
+  height: 31px;
+  border-radius: 3px;
+  margin: 6px;
+}
+
+.input-color-container input,
+.input-color-container_Small input {
+  position: absolute;
+  inset: -8px;
+  width: 100px;
+  height: 60px;
 }

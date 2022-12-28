@@ -31,13 +31,14 @@
           aria-label="Toggle navigation"
         ></i>
 
-        <a class="navbar-brand ml-2 ml-lg-0 mt-2 mt-lg-0" href="#">
+        <a class="navbar-brand ml-2 mt-2 " href="#">
           <img
             src="./Assets/img/logo.png"
             width="130"
             height="30px"
             class="d-inline-block align-top"
-            alt="Iconpaq"
+            id="image-logo1"
+            alt="ICONPAQ"
           />
           <!-- Name Your Brand -->
         </a>
@@ -347,23 +348,24 @@ download
 
                     <input type="text" style="width: 80px; outline: 0px !important; font-size: 20px;"  class="bg-transparent border-0 small" value="#56566F" id="SetColorToIcon3" onkeyup="SetColorToIcons3(this)" >
 
+                  <div class="input-color-container" >
                     <input
 
-                      style="height: 50px; width: 80px !important"
 
-                      type="color"
+                    type="color"
 
-                      id="ColorPic3"
+                    id="ColorPic3"
 
-                      onchange="watchColorPicker3()"
+                    onchange="watchColorPicker3()"
 
-                      class="bg-transparent border-0 rounded-pill"
+                    class="bg-transparent border-0 rounded-pill"
 
-                      value="#56566F"
-                      
-                     
+                    value="#56566F"
+                    
+                   
 
-                    />
+                  />
+                  </div>
 
                   </div>
 
@@ -918,13 +920,14 @@ download
                   >
                     <small class="ml-3" style="font-size: 16px;" >SetColor : </small>
                     	     <input type="text" style="width: 80px; outline: 0px !important; font-size: 20px;"  class="bg-transparent border-0 small" value="#56566F" id="SetColorToIcon" onkeyup="SetColorToIcons(this)" >
+                  <div class="input-color-container" >
                     <input
-                      style="height: 50px; width: 80px !important"
-                      type="color"
-                      id="ColorPic"
-                      class="bg-transparent border-0 rounded-pill"
-                      value="#56566F"
-                    />
+                    type="color"
+                    id="ColorPic"
+                    class="bg-transparent border-0 rounded-pill"
+                    value="#56566F"
+                  />
+                  </div>
                   </div>
                 </div>
 
@@ -1151,7 +1154,7 @@ download
               <div
                 class="d-flex align-items-center Color_Gray order-2 order-lg-0 searchStyle"
               >
-                <svg class="mr-1 ml-md-4 ml-lg-2" width="15" height="15" viewBox="-10 -4 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="mr-1 ml-2" width="15" height="15" viewBox="-10 -4 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.529 20.1856C8.61898 20.1857 6.75181 19.6194 5.16364 18.5583C3.57546 17.4973 2.3376 15.989 1.60661 14.2244C0.875624 12.4598 0.684332 10.5181 1.05693 8.64475C1.42953 6.77142 2.34928 5.05065 3.69987 3.70006C5.05046 2.34946 6.77123 1.42971 8.64456 1.05711C10.5179 0.684515 12.4596 0.875807 14.2243 1.6068C15.9889 2.33779 17.4971 3.57564 18.5582 5.16382C19.6192 6.752 20.1855 8.61916 20.1854 10.5292C20.1818 13.0891 19.1632 15.5431 17.3531 17.3533C15.5429 19.1634 13.0889 20.1819 10.529 20.1856ZM10.529 2.28519C8.89864 2.28519 7.30488 2.76864 5.94928 3.67441C4.59367 4.58018 3.53709 5.86759 2.91315 7.37384C2.28921 8.88008 2.12593 10.5375 2.44395 12.1366C2.76198 13.7356 3.54703 15.2045 4.69983 16.3573C5.85263 17.5102 7.3214 18.2954 8.92043 18.6135C10.5195 18.9317 12.1769 18.7685 13.6832 18.1447C15.1895 17.5208 16.477 16.4644 17.3828 15.1088C18.2887 13.7533 18.7723 12.1596 18.7724 10.5292C18.7702 8.34353 17.901 6.24802 16.3555 4.70247C14.8101 3.15691 12.7147 2.28757 10.529 2.28519Z" fill="#56566F"/>
                   <path d="M20.4212 21.1282C20.3284 21.1285 20.2365 21.1104 20.1508 21.0748C20.0651 21.0393 19.9873 20.9871 19.922 20.9212L18.038 19.0366C17.911 18.9031 17.8413 18.7252 17.8436 18.541C17.8459 18.3568 17.9202 18.1808 18.0504 18.0506C18.1807 17.9203 18.3567 17.8461 18.5409 17.8438C18.7251 17.8415 18.9029 17.9112 19.0364 18.0382L20.9204 19.9222C21.0515 20.0552 21.1251 20.2345 21.1251 20.4214C21.1251 20.6082 21.0515 20.7875 20.9204 20.9206C20.8551 20.9866 20.7774 21.0389 20.6917 21.0746C20.6059 21.1102 20.514 21.1284 20.4212 21.1282Z" fill="#56566F"/>
                   </svg>
@@ -3201,7 +3204,7 @@ class="w-100 rounded-lg p-1 d-flex flex-column align-items-center"
                       </i>
                     </div>
 
-                    <div class="images mt-3 pt-3">
+                    <div class="images my-3 pt-3">
                       <div id="Carousel" class="carousel slide">
                         <!-- Carousel items -->
                         <div class="carousel-inner">
@@ -3262,20 +3265,26 @@ class="w-100 rounded-lg p-1 d-flex flex-column align-items-center"
                       ></i>
                     </label>
                   </div>
+                  
 
                   <div class="d-flex flex-column align-items-start ss">
                     <small style="font-size: 12px" class="ml-1" >Component Code</small>
                     <div
                       class="w-100 form-control form-text bg-Gray mt-1 d-flex justify-content-between border-0 align-items-start overflow-hidden ChangeSizeForMobile"
+                      style="padding: 6px 12px 12px 10px;"
                     >
-                      <p class="m-0 mt-1" id="Component_Code"
-                      style="max-height:295px;max-width:138px;text-overflow: ellipsis;white-space: wrap;overflow:hidden;">
+                      <p class="m-0 my-1 Component_Code_text h-100" id="Component_Code"
+                      style="max-width:138px;text-overflow: ellipsis;white-space: wrap;overflow:hidden;">
                         Try Load Again...
                       </p>
-                      <i
-                        class="fa fa-copy Pointer mt-1"
-                        onclick="CopyText(this)"
-                      ></i>
+    
+
+                      <svg  onclick="CopyText(this)" viewBox="-6 -7 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 20px !important; width:20px !important" class="Pointer ml-1" >
+                        <path d="M14.0422 10.954C14.0469 11.0219 14.0504 11.0734 14.1089 11.1181C14.1406 11.1422 14.1796 11.1551 14.2195 11.1545C14.2662 11.1526 14.3119 11.1397 14.3527 11.117C14.4974 11.043 14.6353 10.9563 14.7647 10.858C14.9843 10.691 15.1776 10.4918 15.3378 10.2672C15.5002 10.0406 15.6267 9.79027 15.7133 9.52519C15.8025 9.25058 15.8479 8.96365 15.8476 8.6749V2.75338C15.8482 2.40605 15.7785 2.06211 15.6429 1.74235C15.577 1.58825 15.4966 1.44086 15.4023 1.30231C15.3224 1.18394 15.2328 1.07232 15.1348 0.968476C15.129 0.948806 15.1184 0.930987 15.1036 0.916776C14.9858 0.798574 14.8567 0.691876 14.7185 0.598255C14.5798 0.504334 14.4326 0.423842 14.2786 0.357886C13.9589 0.222031 13.6151 0.152353 13.2677 0.152835H7.34578C7.05681 0.152535 6.76969 0.197947 6.49495 0.287521C6.22999 0.373946 5.98011 0.500711 5.75371 0.663248C5.52884 0.823598 5.32939 1.01699 5.16232 1.23691C5.06399 1.36613 4.97746 1.50384 4.90342 1.64836C4.87976 1.68428 4.8669 1.72633 4.8669 1.76935C4.8669 1.81236 4.87976 1.85441 4.90342 1.89034C4.94819 1.94935 4.9994 1.95294 5.06757 1.95772C5.09153 1.95941 5.11759 1.96123 5.14621 1.96567H5.69623C5.79837 1.95822 5.89844 1.93273 5.99166 1.89034C6.07679 1.84338 6.15183 1.77974 6.21188 1.70328C6.51783 1.41263 6.92325 1.25027 7.34524 1.24953H13.1549C13.1911 1.25704 13.2275 1.2609 13.2645 1.26108C13.4421 1.26099 13.6184 1.29243 13.785 1.35401C14.0659 1.46512 14.3074 1.65813 14.4773 1.90793C14.6473 2.15773 14.7382 2.45285 14.7384 2.75499C14.7386 2.79195 14.7422 2.82877 14.7497 2.86497V8.67705C14.7489 9.09878 14.5872 9.50425 14.2969 9.81014C14.22 9.86994 14.1557 9.94489 14.1089 10.0302C14.0666 10.1233 14.0414 10.223 14.0342 10.325V10.875C14.0387 10.9037 14.0405 10.9299 14.0422 10.954Z" fill="#f2f2f8"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.78471 15.8572L7.56278 15.8578C10.7738 15.8578 12.2036 14.4249 12.2036 11.2166V8.43896C12.2036 5.2279 10.7716 3.79784 7.56278 3.79784H4.78525C1.57419 3.79784 0.144394 5.23065 0.144394 8.43896V11.2166C0.144394 14.4271 1.57585 15.8572 4.78471 15.8572ZM7.56224 14.7609H4.78471V14.7598C2.16823 14.7598 1.24014 13.8324 1.24069 11.216V8.43843C1.24069 5.82195 2.16823 4.89346 4.78471 4.89346H7.56224C10.1787 4.89346 11.1063 5.82195 11.1063 8.43843V11.216C11.1063 13.833 10.1793 14.7609 7.56224 14.7609Z" fill="#f2f2f8"></path>
+                        </svg>
+
+
                     </div>
                   </div>
                 </section>
@@ -3290,13 +3299,14 @@ class="w-100 rounded-lg p-1 d-flex flex-column align-items-center"
                     >
                       <small class="mx-1">SetColor : </small>
                       <input type="text" style="width: 80px; outline: 0px !important;" class="bg-transparent border-0 small" value="#56566F" id="SetColorToIcon2" onkeyup="SetColorToIcons2(this)">
-                      <input
-                        style="height: 40px; width: 50px !important; border-radius: 10px !important;"
+                      <div  class="input-color-container_Small" >
+                        <input
                         type="color"
                         class="bg-transparent border-0 rounded-pill"
                         id="ColorPic2"
                         value="#56566F"
                       />
+                      </div>
                     </div>
                   </div>
 
@@ -3582,8 +3592,9 @@ class="w-100 rounded-lg p-1 d-flex flex-column align-items-center"
           >
             <img
               src="./Assets/img/logo.png"
+              id="image-logo2"
               alt="ICONPAQ"
-              style="width: 110px; height: 30px"
+              style="width: 120px; height: 35px"
             />
 
             <div class="d-flex align-items-center mt-4">
