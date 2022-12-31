@@ -4,11 +4,18 @@
 
 window.addEventListener('load', function () {
 	var funvar =0;
-	var count =0;
-	
+	var count =30;
+
+
+  var Items = document.getElementsByClassName("Icon_Pack");
+
+  // load 30 first 
+  for (let i = 0; i < 30; i++) {
+    Items[i].style.display="flex";
+  }
+	// end load 30 first
 
 var twoSecound = setInterval(twoSecondFunction, 2000);
-
 
 function twoSecondFunction() {
 	var Items = document.getElementsByClassName("Icon_Pack");
@@ -19,7 +26,6 @@ function twoSecondFunction() {
 		{
 			Items[count].style.display="flex";
 			++count;
-	//    console.log("hello"+count);
 			}
 		else
 {

@@ -253,6 +253,11 @@ main .Container_Icons .Icon_Pack-1:hover i {
   margin-top: 0px;
 }
 
+main .Container_Icons .Icon_Pack-1
+{
+  display: none;
+}
+
 .customizeforphone {
   border-radius: 30px;
   overflow: auto;
