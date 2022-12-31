@@ -1,6 +1,44 @@
 // add onChange="watchColorPicker()" to who element has ColorPic in modal2 and web windows
 
+
+
+window.addEventListener('load', function () {
+	var funvar =0;
+	var count =0;
+	
+
+var twoSecound = setInterval(twoSecondFunction, 2000);
+
+
+function twoSecondFunction() {
+	var Items = document.getElementsByClassName("Icon_Pack");
+
+	for(funvar; funvar<=30; funvar++)
+	{
+		if(Items[count])
+		{
+			Items[count].style.display="flex";
+			++count;
+	//    console.log("hello"+count);
+			}
+		else
+{
+	clearInterval(twoSecound);
+	}
+		
+	}
+       funvar = 0;
+}
+})
+
+
+
+
 $(document).ready(function () {
+	
+	
+
+	
   $(window).resize(function () {
     var width = $(window).width();
 
@@ -1952,3 +1990,4 @@ function DownloadSvgAsZip(zip, getCount, name) {
     countSvg = 0;
   }
 }
+

@@ -154,7 +154,7 @@ main .Container_Icons .Icon_Pack-1 {
   min-height: 107px;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: start;

@@ -140,7 +140,7 @@ main .Container_Icons {
 main .Container_Icons .Icon_Pack {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: start;
