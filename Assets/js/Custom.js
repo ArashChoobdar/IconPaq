@@ -1,50 +1,35 @@
-// add onChange="watchColorPicker()" to who element has ColorPic in modal2 and web windows
-
-
-
-window.addEventListener('load', function () {
-	var funvar =0;
-	var count =30;
-
+// Load Icons Every 2sec 30 icon
+window.addEventListener("load", function () {
+  var funvar = 0;
+  var count = 30;
 
   var Items = document.getElementsByClassName("Icon_Pack");
 
-  // load 30 first 
+  // load 30 first
   for (let i = 0; i < 30; i++) {
-    Items[i].style.display="flex";
+    Items[i].style.display = "flex";
   }
-	// end load 30 first
+  // end load 30 first
 
-var twoSecound = setInterval(twoSecondFunction, 2000);
+  var twoSecound = setInterval(twoSecondFunction, 2000);
 
-function twoSecondFunction() {
-	var Items = document.getElementsByClassName("Icon_Pack");
+  function twoSecondFunction() {
+    var Items = document.getElementsByClassName("Icon_Pack");
 
-	for(funvar; funvar<=30; funvar++)
-	{
-		if(Items[count])
-		{
-			Items[count].style.display="flex";
-			++count;
-			}
-		else
-{
-	clearInterval(twoSecound);
-	}
-		
-	}
-       funvar = 0;
-}
-})
-
-
-
+    for (funvar; funvar <= 30; funvar++) {
+      if (Items[count]) {
+        Items[count].style.display = "flex";
+        ++count;
+      } else {
+        clearInterval(twoSecound);
+      }
+    }
+    funvar = 0;
+  }
+});
+// END Load Icons Every 2sec 30 icon
 
 $(document).ready(function () {
-	
-	
-
-	
   $(window).resize(function () {
     var width = $(window).width();
 
@@ -85,31 +70,14 @@ $(document).ready(function () {
             if (p.getAttribute("stroke")) {
               p.setAttribute("stroke", event.target.value);
             } else {
-              p.setAttribute("fill", event.target.value);
+              if (p.classList.contains("Icon-Colorful")) {
+              } else {
+                p.setAttribute("fill", event.target.value);
+              }
             }
-            GetBackColorToColorfulIcons();
             document.getElementById("SetColorToIcon3").value =
               event.target.value;
           });
-
-          if (
-            document
-              .getElementById("mycolorful")
-              .parentElement.classList.contains("Font14")
-          ) {
-            for (var i = 0; i < Items.length; i++) {
-              var Colorful = Items[i]
-                .getElementsByClassName("Icons_Button_Slider")[0]
-                .getElementsByTagName("svg")[1];
-              var IconSvg =
-                Items[i].firstChild.nextElementSibling.getElementsByTagName(
-                  "svg"
-                )[0];
-
-              Colorful = Colorful.cloneNode(true);
-              IconSvg.replaceWith(Colorful);
-            }
-          }
         }
       }
     }
@@ -157,28 +125,13 @@ function watchColorPicker3(event) {
     if (p.getAttribute("stroke")) {
       p.setAttribute("stroke", event.target.value);
     } else {
-      p.setAttribute("fill", event.target.value);
+      if (p.classList.contains("Icon-Colorful")) {
+      } else {
+        p.setAttribute("fill", event.target.value);
+      }
     }
-    GetBackColorToColorfulIcons();
     document.getElementById("SetColorToIcon3").value = event.target.value;
   });
-
-  if (
-    document
-      .getElementById("mycolorful")
-      .parentElement.classList.contains("Font14")
-  ) {
-    for (var i = 0; i < Items.length; i++) {
-      var Colorful = Items[i]
-        .getElementsByClassName("Icons_Button_Slider")[0]
-        .getElementsByTagName("svg")[1];
-      var IconSvg =
-        Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
-
-      Colorful = Colorful.cloneNode(true);
-      IconSvg.replaceWith(Colorful);
-    }
-  }
 }
 
 // Set Outline Icon To Defult
@@ -212,7 +165,6 @@ for (var i = 0; i < Items.length; i++) {
   Original = Original.cloneNode(true);
   IconSvg.replaceWith(Original);
 }
-
 // End Set Outline Icon To Defult
 
 var checkthemesite = 0;
@@ -260,151 +212,6 @@ function Select_Button(obj) {
   }
 }
 
-var count1 = 0;
-var CheckTheme = true;
-
-function ChangeTheme_Index(obj) {
-  if (count1 == 0) {
-    CheckTheme = false;
-    document
-      .getElementsByTagName("head")[0]
-      .insertAdjacentHTML(
-        "beforeend",
-        "<link rel='stylesheet' href='Assets/css/index_Dark.css' />"
-      );
-    checkthemesite = 0;
-    localStorage.setItem("CheckTheme", checkthemesite);
-    document.getElementById("introimage").src = "Assets/img/Intro_Image1.png";
-    document.getElementById("image-logo1").src = "./Assets/img/logo_dark.png";
-    document.getElementById("image-logo2").src = "./Assets/img/logo_dark.png";
-    document.getElementById("SetColorToIcon").value = "#f2f2f8";
-    document.getElementById("SetColorToIcon2").value = "#f2f2f8";
-    document.getElementById("ColorPic2").value = "#f2f2f8";
-    document.getElementById("ColorPic").value = "#f2f2f8";
-
-    if (document.getElementById("SetColorToIcon3")) {
-      document.getElementById("SetColorToIcon3").value = "#f2f2f8";
-      document.getElementById("ColorPic3").value = "#f2f2f8";
-    }
-
-    document.getElementById("changeicontheme_SmallMenu").className = "";
-    document.getElementById("changeicontheme").className = "";
-
-    document.getElementById("svgicontheme").style.display = "inline-block";
-    document.getElementById("svgicontheme1").style.display = "inline-block";
-    var path = document.getElementsByTagName("path");
-    var svg = document.getElementsByTagName("svg");
-
-    for (let i = 0; i < svg.length; i++) {
-      if (svg[i].getAttribute("stroke")) {
-        svg[i].setAttribute("stroke", "#f2f2f8");
-      }
-    }
-
-    for (let i = 0; i < path.length; i++) {
-      if (path[i].getAttribute("stroke")) {
-        path[i].setAttribute("stroke", "#f2f2f8");
-
-        if (path[i].getAttribute("fill") !== "transparent") {
-          path[i].setAttribute("fill", "#f2f2f8");
-        }
-
-        if (path[i].parentElement.getAttribute("fill") == "none") {
-        } else {
-          path[i].parentElement.removeAttribute("fill");
-        }
-      } else {
-        path[i].setAttribute("fill", "#f2f2f8");
-      }
-    }
-    GetBackColorToColorfulIcons();
-
-    var Items = document.getElementsByClassName("Icon_Pack");
-
-    if (
-      document
-        .getElementById("mycolorful")
-        .parentElement.classList.contains("Font14")
-    ) {
-      for (var i = 0; i < Items.length; i++) {
-        var Colorful = Items[i]
-          .getElementsByClassName("Icons_Button_Slider")[0]
-          .getElementsByTagName("svg")[1];
-        var IconSvg =
-          Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
-
-        Colorful = Colorful.cloneNode(true);
-        IconSvg.replaceWith(Colorful);
-      }
-    }
-
-    count1 = 1;
-  } else {
-    CheckTheme = false;
-    document
-      .getElementsByTagName("head")[0]
-      .insertAdjacentHTML(
-        "beforeend",
-        "<link rel='stylesheet' href='Assets/css/index_Light.css' />"
-      );
-    checkthemesite = 1;
-    localStorage.setItem("CheckTheme", checkthemesite);
-    document.getElementById("introimage").src = "Assets/img/Intro_Image.png";
-    document.getElementById("image-logo1").src = "./Assets/img/logo.png";
-    document.getElementById("image-logo2").src = "./Assets/img/logo.png";
-    if (document.getElementById("SetColorToIcon3")) {
-      document.getElementById("ColorPic3").value = "#56566F";
-      document.getElementById("SetColorToIcon3").value = "#56566F";
-    }
-
-    document.getElementById("SetColorToIcon").value = "#56566F";
-    document.getElementById("ColorPic").value = "#56566F";
-    document.getElementById("ColorPic2").value = "#56566F";
-    document.getElementById("SetColorToIcon2").value = "#56566F";
-    count1 = 0;
-
-    document.getElementById("changeicontheme_SmallMenu").className =
-      "fa fa-moon-o";
-    document.getElementById("changeicontheme").className = "fa fa-moon-o";
-
-    document.getElementById("svgicontheme").style.display = "none";
-    document.getElementById("svgicontheme1").style.display = "none";
-    var path = document.getElementsByTagName("path");
-
-    for (let i = 0; i < path.length; i++) {
-      if (path[i].getAttribute("stroke")) {
-        path[i].setAttribute("stroke", "#56566F");
-        if (path[i].getAttribute("fill") !== "transparent") {
-          path[i].setAttribute("fill", "#56566F");
-        }
-      } else {
-        path[i].setAttribute("fill", "#56566F");
-      }
-    }
-
-    GetBackColorToColorfulIcons();
-
-    var Items = document.getElementsByClassName("Icon_Pack");
-
-    if (
-      document
-        .getElementById("mycolorful")
-        .parentElement.classList.contains("Font14")
-    ) {
-      for (var i = 0; i < Items.length; i++) {
-        var Colorful = Items[i]
-          .getElementsByClassName("Icons_Button_Slider")[0]
-          .getElementsByTagName("svg")[1];
-        var IconSvg =
-          Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
-
-        Colorful = Colorful.cloneNode(true);
-        IconSvg.replaceWith(Colorful);
-      }
-    }
-  }
-}
-
 var count2 = 0;
 
 function ChangeTheme_Suggested(obj) {
@@ -439,44 +246,21 @@ function watchColorPicker(event) {
     if (p.getAttribute("stroke")) {
       p.setAttribute("stroke", event.target.value);
     } else {
-      p.setAttribute("fill", event.target.value);
+      if (p.classList.contains("Icon-Colorful")) {
+      } else {
+        p.setAttribute("fill", event.target.value);
+      }
     }
-    GetBackColorToColorfulIcons();
     document.getElementById("SetColorToIcon").value = event.target.value;
   });
-
-  if (
-    document
-      .getElementById("mycolorful")
-      .parentElement.classList.contains("Font14")
-  ) {
-    for (var i = 0; i < Items.length; i++) {
-      var Colorful = Items[i]
-        .getElementsByClassName("Icons_Button_Slider")[0]
-        .getElementsByTagName("svg")[1];
-      var IconSvg =
-        Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
-
-      Colorful = Colorful.cloneNode(true);
-      IconSvg.replaceWith(Colorful);
-    }
-  }
 }
 
 function ChangeIcon(obj) {
   var container = document.getElementById("ConImageChange");
   var newitem = obj.getElementsByTagName("svg")[0];
-  var Nitem_id = newitem.id;
 
   var CopyNewItem = newitem.cloneNode(true);
   var Id_Svg = container.id;
-  var colorpic = document.getElementById("ColorPic2");
-
-  if (Nitem_id == "colorful") {
-    colorpic.disabled = true;
-  } else {
-    colorpic.disabled = false;
-  }
 
   if (newitem.getElementsByTagName("path").length > 0) {
     var Id_Path = "ContainerImage";
@@ -523,11 +307,12 @@ var colorPicker2 = document.getElementById("ColorPic2");
 colorPicker2.addEventListener("change", watchColorPicker2, false);
 function watchColorPicker2(event) {
   document.getElementById("SetColorToIcon2").value = event.target.value;
-  // var Container = document.getElementById("ContainerImage");
   var Container = document
     .getElementById("ConImageChange")
     .getElementsByTagName("path");
-  var NewContainer = document.getElementById("ConImageChange");
+  var NewContainer = document
+    .getElementById("ConImageChange")
+    .getElementsByTagName("path")[0];
 
   if (Container.length > 0) {
     if (Container.length > 1) {
@@ -535,33 +320,30 @@ function watchColorPicker2(event) {
         if (Container[i].getAttribute("stroke")) {
           Container[i].setAttribute("stroke", event.target.value);
         } else {
-          if (NewContainer.classList[0] == "colorful") {
-            if (Container.length > 3) {
-              Container[0].setAttribute("fill", event.target.value);
-              Container[1].setAttribute("fill", event.target.value);
-              Container[2].setAttribute("fill", event.target.value);
-              Container[3].setAttribute("fill", event.target.value);
-            }
-            if (Container.length <= 3) {
-              Container[1].setAttribute("fill", event.target.value);
-            }
+          if (Container[i].classList.contains("Icon-Colorful")) {
           } else {
             Container[i].setAttribute("fill", event.target.value);
           }
         }
       }
     } else {
-      if (Container[0].getAttribute("stroke")) {
-        Container[0].setAttribute("stroke", event.target.value);
+      if (NewContainer.getAttribute("stroke")) {
+        NewContainer.setAttribute("stroke", event.target.value);
       } else {
-        Container[0].setAttribute("fill", event.target.value);
+        if (NewContainer.classList.contains("Icon-Colorful")) {
+        } else {
+          NewContainer.setAttribute("fill", event.target.value);
+        }
       }
     }
   } else {
     if (NewContainer.getAttribute("stroke")) {
       NewContainer.setAttribute("stroke", event.target.value);
     } else {
-      NewContainer.setAttribute("fill", event.target.value);
+      if (NewContainer.classList.contains("Icon-Colorful")) {
+      } else {
+        NewContainer.setAttribute("fill", event.target.value);
+      }
     }
   }
 
@@ -598,7 +380,7 @@ function Search() {
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].parentElement.style.display = "";
+        tr[i].parentElement.style.display = "flex";
       } else {
         tr[i].parentElement.style.display = "none";
       }
@@ -609,8 +391,6 @@ function Search() {
 var item;
 
 function MultiSelect(obj) {
-  var colorpic = document.getElementById("ColorPic2");
-  colorpic.disabled = false;
   if (
     document.getElementById("button_MultiSelect1").classList.contains("bg-Gray")
   ) {
@@ -1222,51 +1002,6 @@ function SwitchColor(obj) {
   }
 }
 
-var path = document.getElementsByTagName("path");
-
-for (let i = 0; i < path.length; i++) {
-  if (path[i].getAttribute("stroke")) {
-    path[i].setAttribute("stroke", "#56566F");
-  } else {
-    path[i].setAttribute("fill", "#56566F");
-  }
-}
-
-var svgnew = document.getElementsByClassName("Icon_Pack");
-
-for (let s = 0; s < svgnew.length; s++) {
-  var svgEdite = svgnew[s]
-    .getElementsByClassName("Icons_Button_Slider")[0]
-    .getElementsByTagName("svg")[1];
-
-  svgEdite.setAttribute("id", "colorful");
-
-  var paths = svgEdite.getElementsByTagName("path");
-
-  for (let s = 0; s < paths.length; s++) {
-    var clone = paths[s];
-    var newitem;
-
-    newitem = clone.removeAttribute("fill");
-
-    if (s == 0) {
-      newitem = clone.setAttribute("fill", "#dcdcea");
-    }
-    if (s == 1) {
-      newitem = clone.setAttribute("fill", "#685AD3");
-    }
-    if (s == 2) {
-      newitem = clone.setAttribute("fill", "#15C0AB");
-    }
-    if (s >= 3) {
-      newitem = clone.setAttribute("fill", "#FBB03B");
-    }
-
-    newitem = clone.outerHTML.toString().replace("</path>", "");
-    newitem = newitem.replace(">", "/>");
-  }
-}
-
 function SetColorToIcons(obj) {
   var text = obj.value;
   document.getElementById("ColorPic").value = text;
@@ -1277,25 +1012,9 @@ function SetColorToIcons(obj) {
     if (Items[i].getAttribute("stroke")) {
       Items[i].setAttribute("stroke", text);
     } else {
-      Items[i].setAttribute("fill", text);
-    }
-    GetBackColorToColorfulIcons();
-    if (
-      document
-        .getElementById("mycolorful")
-        .parentElement.classList.contains("Font14")
-    ) {
-      for (var i1 = 0; i1 < Items.length; i1++) {
-        var Colorful = Items[i1]
-          .getElementsByClassName("Icons_Button_Slider")[0]
-          .getElementsByTagName("svg")[1];
-        var IconSvg =
-          Items[i1].firstChild.nextElementSibling.getElementsByTagName(
-            "svg"
-          )[0];
-
-        Colorful = Colorful.cloneNode(true);
-        IconSvg.replaceWith(Colorful);
+      if (Items[i].classList.contains("Icon-Colorful")) {
+      } else {
+        Items[i].setAttribute("fill", text);
       }
     }
   }
@@ -1313,7 +1032,7 @@ function SetColorToIcons3(obj) {
     } else {
       Items[i].setAttribute("fill", text);
     }
-    GetBackColorToColorfulIcons();
+
     if (
       document
         .getElementById("mycolorful")
@@ -1673,51 +1392,15 @@ function resetForm() {
     if (p.getAttribute("stroke")) {
       p.setAttribute("stroke", color);
     } else {
-      p.setAttribute("fill", color);
+      if (p.classList.contains("Icon-Colorful")) {
+      } else {
+        p.setAttribute("fill", color);
+      }
     }
     document.getElementById("SetColorToIcon").value = color;
   });
 
   // End Reset Color
-
-  GetBackColorToColorfulIcons();
-}
-
-function GetBackColorToColorfulIcons() {
-  var svgnew = document.getElementsByClassName("Icon_Pack");
-
-  for (let s = 0; s < svgnew.length; s++) {
-    var svgEdite = svgnew[s]
-      .getElementsByClassName("Icons_Button_Slider")[0]
-      .getElementsByTagName("svg")[1];
-
-    svgEdite.setAttribute("id", "colorful");
-
-    var paths = svgEdite.getElementsByTagName("path");
-
-    for (let s = 0; s < paths.length; s++) {
-      var clone = paths[s];
-      var newitem;
-
-      newitem = clone.removeAttribute("fill");
-
-      if (s == 0) {
-        newitem = clone.setAttribute("fill", "#dcdcea");
-      }
-      if (s == 1) {
-        newitem = clone.setAttribute("fill", "#685AD3");
-      }
-      if (s == 2) {
-        newitem = clone.setAttribute("fill", "#15C0AB");
-      }
-      if (s >= 3) {
-        newitem = clone.setAttribute("fill", "#FBB03B");
-      }
-
-      newitem = clone.outerHTML.toString().replace("</path>", "");
-      newitem = newitem.replace(">", "/>");
-    }
-  }
 }
 
 function SwitchSvgPng() {
@@ -1791,134 +1474,6 @@ async function ShareSVGCode() {
         boxShadow: "none",
       },
     }).showToast();
-  }
-}
-
-if (localStorage.getItem("CheckTheme") == 0) {
-  document.getElementById("MyTheme").href = "Assets/css/index_Dark.css";
-
-  document.getElementById("introimage").src = "Assets/img/Intro_Image1.png";
-  document.getElementById("image-logo1").src = "./Assets/img/logo_dark.png";
-  document.getElementById("image-logo2").src = "./Assets/img/logo_dark.png";
-  if (document.getElementById("SetColorToIcon3")) {
-    document.getElementById("SetColorToIcon3").value = "#f2f2f8";
-    document.getElementById("ColorPic3").value = "#f2f2f8";
-  }
-
-  document.getElementById("SetColorToIcon").value = "#f2f2f8";
-  document.getElementById("ColorPic").value = "#f2f2f8";
-  document.getElementById("ColorPic2").value = "#f2f2f8";
-  document.getElementById("SetColorToIcon2").value = "#f2f2f8";
-
-  document.getElementById("changeicontheme_SmallMenu").className = "";
-  document.getElementById("changeicontheme").className = "";
-
-  document.getElementById("svgicontheme").style.display = "inline-block";
-  document.getElementById("svgicontheme1").style.display = "inline-block";
-
-  var path = document.getElementsByTagName("path");
-  var svg = document.getElementsByTagName("svg");
-
-  for (let i = 0; i < svg.length; i++) {
-    if (svg[i].hasAttribute("stroke")) {
-      svg[i].setAttribute("stroke", "#f2f2f8");
-    }
-  }
-
-  for (let i = 0; i < path.length; i++) {
-    if (path[i].hasAttribute("stroke")) {
-      path[i].setAttribute("stroke", "#f2f2f8");
-
-      if (path[i].getAttribute("fill") !== "transparent") {
-        path[i].setAttribute("fill", "#f2f2f8");
-      }
-
-      if (path[i].parentElement.getAttribute("fill") == "none") {
-      } else {
-        path[i].parentElement.removeAttribute("fill");
-      }
-    } else {
-      path[i].setAttribute("fill", "#f2f2f8");
-    }
-  }
-
-  GetBackColorToColorfulIcons();
-
-  var Items = document.getElementsByClassName("Icon_Pack");
-
-  if (
-    document
-      .getElementById("mycolorful")
-      .parentElement.classList.contains("Font14")
-  ) {
-    for (var i = 0; i < Items.length; i++) {
-      var Colorful = Items[i]
-        .getElementsByClassName("Icons_Button_Slider")[0]
-        .getElementsByTagName("svg")[1];
-      var IconSvg =
-        Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
-
-      Colorful = Colorful.cloneNode(true);
-      IconSvg.replaceWith(Colorful);
-    }
-  }
-
-  count1 = 1;
-} else if (localStorage.getItem("CheckTheme") == 1) {
-  document.getElementById("MyTheme").href = "Assets/css/index_Light.css";
-
-  CheckTheme = false;
-  document.getElementById("introimage").src = "Assets/img/Intro_Image.png";
-  document.getElementById("image-logo1").src = "./Assets/img/logo.png";
-  document.getElementById("image-logo2").src = "./Assets/img/logo.png";
-  if (document.getElementById("SetColorToIcon3")) {
-    document.getElementById("SetColorToIcon3").value = "#56566F";
-    document.getElementById("ColorPic3").value = "#56566F";
-  }
-  document.getElementById("SetColorToIcon").value = "#56566F";
-  document.getElementById("SetColorToIcon2").value = "#56566F";
-  document.getElementById("ColorPic2").value = "#56566F";
-  document.getElementById("ColorPic").value = "#56566F";
-
-  count1 = 0;
-
-  document.getElementById("changeicontheme_SmallMenu").className =
-    "fa fa-moon-o";
-  document.getElementById("changeicontheme").className = "fa fa-moon-o";
-  document.getElementById("svgicontheme").style.display = "none";
-  document.getElementById("svgicontheme1").style.display = "none";
-  var path = document.getElementsByTagName("path");
-
-  for (let i = 0; i < path.length; i++) {
-    if (path[i].getAttribute("stroke")) {
-      path[i].setAttribute("stroke", "#56566F");
-      if (path[i].getAttribute("fill") !== "transparent") {
-        path[i].setAttribute("fill", "#56566F");
-      }
-    } else {
-      path[i].setAttribute("fill", "#56566F");
-    }
-  }
-
-  GetBackColorToColorfulIcons();
-
-  var Items = document.getElementsByClassName("Icon_Pack");
-
-  if (
-    document
-      .getElementById("mycolorful")
-      .parentElement.classList.contains("Font14")
-  ) {
-    for (var i = 0; i < Items.length; i++) {
-      var Colorful = Items[i]
-        .getElementsByClassName("Icons_Button_Slider")[0]
-        .getElementsByTagName("svg")[1];
-      var IconSvg =
-        Items[i].firstChild.nextElementSibling.getElementsByTagName("svg")[0];
-
-      Colorful = Colorful.cloneNode(true);
-      IconSvg.replaceWith(Colorful);
-    }
   }
 }
 
@@ -1997,3 +1552,251 @@ function DownloadSvgAsZip(zip, getCount, name) {
   }
 }
 
+
+ // Start Set Color To Black Fro First Time 
+
+ var path = document.getElementsByTagName("path");
+
+ for (let i = 0; i < path.length; i++) {
+   if (path[i].getAttribute("stroke")) {
+     path[i].setAttribute("stroke", "#56566F");
+     if (path[i].getAttribute("fill") !== "transparent") {
+       path[i].setAttribute("fill", "#56566F");
+     }
+   } else {
+     if (path[i].classList.contains("Icon-Colorful")) {
+     } else {
+       path[i].setAttribute("fill", "#56566F");
+     }
+   }
+ }
+ // End Set Color To Black Fro First Time 
+
+
+// Start Change Theme Index.html
+var count1 = 0;
+var CheckTheme = true;
+
+function ChangeTheme_Index(obj) {
+  if (count1 == 0) {
+    CheckTheme = false;
+    document
+      .getElementsByTagName("head")[0]
+      .insertAdjacentHTML(
+        "beforeend",
+        "<link rel='stylesheet' href='Assets/css/index_Dark.css' />"
+      );
+    checkthemesite = 0;
+    localStorage.setItem("CheckTheme", checkthemesite);
+    document.getElementById("introimage").src = "Assets/img/Intro_Image1.png";
+    document.getElementById("image-logo1").src = "./Assets/img/logo_dark.png";
+    document.getElementById("image-logo2").src = "./Assets/img/logo_dark.png";
+    document.getElementById("SetColorToIcon").value = "#f2f2f8";
+    document.getElementById("SetColorToIcon2").value = "#f2f2f8";
+    document.getElementById("ColorPic2").value = "#f2f2f8";
+    document.getElementById("ColorPic").value = "#f2f2f8";
+
+    if (document.getElementById("SetColorToIcon3")) {
+      document.getElementById("SetColorToIcon3").value = "#f2f2f8";
+      document.getElementById("ColorPic3").value = "#f2f2f8";
+    }
+
+    document.getElementById("changeicontheme_SmallMenu").className = "";
+    document.getElementById("changeicontheme").className = "";
+
+    document.getElementById("svgicontheme").style.display = "inline-block";
+    document.getElementById("svgicontheme1").style.display = "inline-block";
+
+    // Add Color To Svg
+    var path = document.getElementsByTagName("path");
+    var svg = document.getElementsByTagName("svg");
+    for (let i = 0; i < svg.length; i++) {
+      if (svg[i].getAttribute("stroke")) {
+        svg[i].setAttribute("stroke", "#f2f2f8");
+      }
+    }
+    for (let i = 0; i < path.length; i++) {
+      if (path[i].getAttribute("stroke")) {
+        path[i].setAttribute("stroke", "#f2f2f8");
+
+        if (path[i].getAttribute("fill") !== "transparent") {
+          path[i].setAttribute("fill", "#f2f2f8");
+        }
+
+        if (path[i].parentElement.getAttribute("fill") == "none") {
+        } else {
+          path[i].parentElement.removeAttribute("fill");
+        }
+      } else {
+        if (path[i].classList.contains("Icon-Colorful")) {
+        } else {
+          path[i].setAttribute("fill", "#f2f2f8");
+        }
+      }
+    }
+    // END Add Color To Svg
+
+    count1 = 1;
+  } else {
+    CheckTheme = false;
+    document
+      .getElementsByTagName("head")[0]
+      .insertAdjacentHTML(
+        "beforeend",
+        "<link rel='stylesheet' href='Assets/css/index_Light.css' />"
+      );
+    checkthemesite = 1;
+    localStorage.setItem("CheckTheme", checkthemesite);
+    document.getElementById("introimage").src = "Assets/img/Intro_Image.png";
+    document.getElementById("image-logo1").src = "./Assets/img/logo.png";
+    document.getElementById("image-logo2").src = "./Assets/img/logo.png";
+    if (document.getElementById("SetColorToIcon3")) {
+      document.getElementById("ColorPic3").value = "#56566F";
+      document.getElementById("SetColorToIcon3").value = "#56566F";
+    }
+
+    document.getElementById("SetColorToIcon").value = "#56566F";
+    document.getElementById("ColorPic").value = "#56566F";
+    document.getElementById("ColorPic2").value = "#56566F";
+    document.getElementById("SetColorToIcon2").value = "#56566F";
+    count1 = 0;
+
+    document.getElementById("changeicontheme_SmallMenu").className =
+      "fa fa-moon-o";
+    document.getElementById("changeicontheme").className = "fa fa-moon-o";
+
+    document.getElementById("svgicontheme").style.display = "none";
+    document.getElementById("svgicontheme1").style.display = "none";
+
+    // Add Color To Svg
+
+    var path = document.getElementsByTagName("path");
+
+    for (let i = 0; i < path.length; i++) {
+      if (path[i].getAttribute("stroke")) {
+        path[i].setAttribute("stroke", "#56566F");
+        if (path[i].getAttribute("fill") !== "transparent") {
+          path[i].setAttribute("fill", "#56566F");
+        }
+      } else {
+        if (path[i].classList.contains("Icon-Colorful")) {
+        } else {
+          path[i].setAttribute("fill", "#56566F");
+        }
+      }
+    }
+    // END Add Color To Svg
+  }
+}
+
+if (localStorage.getItem("CheckTheme") == 0) {
+  CheckTheme = false;
+  document
+    .getElementsByTagName("head")[0]
+    .insertAdjacentHTML(
+      "beforeend",
+      "<link rel='stylesheet' href='Assets/css/index_Dark.css' />"
+    );
+  checkthemesite = 0;
+  localStorage.setItem("CheckTheme", checkthemesite);
+  document.getElementById("introimage").src = "Assets/img/Intro_Image1.png";
+  document.getElementById("image-logo1").src = "./Assets/img/logo_dark.png";
+  document.getElementById("image-logo2").src = "./Assets/img/logo_dark.png";
+  document.getElementById("SetColorToIcon").value = "#f2f2f8";
+  document.getElementById("SetColorToIcon2").value = "#f2f2f8";
+  document.getElementById("ColorPic2").value = "#f2f2f8";
+  document.getElementById("ColorPic").value = "#f2f2f8";
+
+  if (document.getElementById("SetColorToIcon3")) {
+    document.getElementById("SetColorToIcon3").value = "#f2f2f8";
+    document.getElementById("ColorPic3").value = "#f2f2f8";
+  }
+
+  document.getElementById("changeicontheme_SmallMenu").className = "";
+  document.getElementById("changeicontheme").className = "";
+
+  document.getElementById("svgicontheme").style.display = "inline-block";
+  document.getElementById("svgicontheme1").style.display = "inline-block";
+
+  // Add Color To Svg
+  var path = document.getElementsByTagName("path");
+  var svg = document.getElementsByTagName("svg");
+  for (let i = 0; i < svg.length; i++) {
+    if (svg[i].getAttribute("stroke")) {
+      svg[i].setAttribute("stroke", "#f2f2f8");
+    }
+  }
+  for (let i = 0; i < path.length; i++) {
+    if (path[i].getAttribute("stroke")) {
+      path[i].setAttribute("stroke", "#f2f2f8");
+
+      if (path[i].getAttribute("fill") !== "transparent") {
+        path[i].setAttribute("fill", "#f2f2f8");
+      }
+
+      if (path[i].parentElement.getAttribute("fill") == "none") {
+      } else {
+        path[i].parentElement.removeAttribute("fill");
+      }
+    } else {
+      if (path[i].classList.contains("Icon-Colorful")) {
+      } else {
+        path[i].setAttribute("fill", "#f2f2f8");
+      }
+    }
+  }
+  // END Add Color To Svg
+
+  count1 = 1;
+} else if (localStorage.getItem("CheckTheme") == 1) {
+  CheckTheme = false;
+  document
+    .getElementsByTagName("head")[0]
+    .insertAdjacentHTML(
+      "beforeend",
+      "<link rel='stylesheet' href='Assets/css/index_Light.css' />"
+    );
+  checkthemesite = 1;
+  localStorage.setItem("CheckTheme", checkthemesite);
+  document.getElementById("introimage").src = "Assets/img/Intro_Image.png";
+  document.getElementById("image-logo1").src = "./Assets/img/logo.png";
+  document.getElementById("image-logo2").src = "./Assets/img/logo.png";
+  if (document.getElementById("SetColorToIcon3")) {
+    document.getElementById("ColorPic3").value = "#56566F";
+    document.getElementById("SetColorToIcon3").value = "#56566F";
+  }
+
+  document.getElementById("SetColorToIcon").value = "#56566F";
+  document.getElementById("ColorPic").value = "#56566F";
+  document.getElementById("ColorPic2").value = "#56566F";
+  document.getElementById("SetColorToIcon2").value = "#56566F";
+  count1 = 0;
+
+  document.getElementById("changeicontheme_SmallMenu").className =
+    "fa fa-moon-o";
+  document.getElementById("changeicontheme").className = "fa fa-moon-o";
+
+  document.getElementById("svgicontheme").style.display = "none";
+  document.getElementById("svgicontheme1").style.display = "none";
+
+  // Add Color To Svg
+
+  var path = document.getElementsByTagName("path");
+
+  for (let i = 0; i < path.length; i++) {
+    if (path[i].getAttribute("stroke")) {
+      path[i].setAttribute("stroke", "#56566F");
+      if (path[i].getAttribute("fill") !== "transparent") {
+        path[i].setAttribute("fill", "#56566F");
+      }
+    } else {
+      if (path[i].classList.contains("Icon-Colorful")) {
+      } else {
+        path[i].setAttribute("fill", "#56566F");
+      }
+    }
+  }
+  // END Add Color To Svg
+}
+
+// End Change Theme Index.html
