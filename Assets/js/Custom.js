@@ -389,8 +389,11 @@ function Search() {
 }
 
 var item;
+var name_Icon;  // for use for download icon 
 
 function MultiSelect(obj) {
+  name_Icon = obj.getElementsByTagName("small")[2].innerHTML
+  
   if (
     document.getElementById("button_MultiSelect1").classList.contains("bg-Gray")
   ) {
@@ -609,7 +612,7 @@ function CopyTextIcon() {
   }).showToast();
 }
 
-function DownloadPNG(name = "image") {
+function DownloadPNG(name = name_Icon) {
   var img = new Image();
   img.onload = function () {
     var canvas = document.createElement("canvas");
@@ -633,7 +636,7 @@ function DownloadPNG(name = "image") {
   img.src = "data:image/svg+xml;utf8," + encodeURIComponent(svgText);
 }
 
-function donloadSVG(name = "Icon") {
+function donloadSVG(name = name_Icon) {
   var svgEl = document.getElementById("ConImageChange");
   svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
   var svgData = svgEl.outerHTML;
@@ -1191,9 +1194,22 @@ for (let s = 0; s < Items.length; s++) {
     .getElementsByTagName("path");
 
   for (let j = 0; j < path.length; j++) {
-    path[j].setAttribute("stroke", "#56566F");
-    path[j].setAttribute("stroke-width", "1px");
-  }
+      path[j].setAttribute("stroke", "#56566F");
+      path[j].setAttribute("stroke-width", ".5px");
+
+
+      if(path[j].classList.contains("defult-fill"))
+      {
+        path[j].setAttribute("stroke-width", "1.2px");
+      }
+      else
+      {
+        path[j].setAttribute("fill", "#56566F");
+      }
+    
+    
+      }
+  
 }
 
 function ChangeStroke() {
@@ -1215,6 +1231,21 @@ function ChangeStroke() {
     for (let j = 0; j < path.length; j++) {
       path[j].setAttribute("stroke", color);
       path[j].setAttribute("stroke-width", input.value);
+      
+      var Num1 = Number(".7");
+      var Num2 = Number(input.value.toString());
+
+        if(path[j].classList.contains("defult-fill"))
+        {
+          var Sum = Num2 + Num1;
+          path[j].setAttribute("stroke-width", Sum);
+        }
+        else
+        {
+        path[j].setAttribute("fill", color);
+        }
+    
+
     }
   }
 
@@ -1255,13 +1286,32 @@ function ChangeStroke() {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function resetForm() {
   var Items = document.getElementsByClassName("Icon_Pack");
   var color = document.getElementById("SetColorToIcon").value;
   var ItemClick = document.getElementsByClassName("Switch1");
 
   document.getElementById("showSize").innerHTML = "40px";
-  document.getElementById("showStroke").innerHTML = "1px";
+  document.getElementById("showStroke").innerHTML = ".5px";
 
   // Reset Size
 
@@ -1303,8 +1353,17 @@ function resetForm() {
 
     for (let j = 0; j < path.length; j++) {
       path[j].setAttribute("stroke", color);
-      path[j].setAttribute("fill", "none");
-      path[j].setAttribute("stroke-width", "1");
+      path[j].setAttribute("stroke-width", ".5");
+
+      if(path[j].classList.contains("defult-fill"))
+      {
+        path[j].setAttribute("stroke-width", "1.2");
+      }
+      else
+      {
+        path[j].setAttribute("fill", color);
+
+      }
     }
   }
 
