@@ -245,6 +245,11 @@ function watchColorPicker(event) {
   document.querySelectorAll(".Icon").forEach((p) => {
     if (p.getAttribute("stroke")) {
       p.setAttribute("stroke", event.target.value);
+
+      if (p.getAttribute("fill") !== "transparent") {
+        p.removeAttribute("fill");
+        p.setAttribute("fill", event.target.value);
+      }
     } else {
       if (p.classList.contains("Icon-Colorful")) {
       } else {
@@ -389,11 +394,11 @@ function Search() {
 }
 
 var item;
-var name_Icon;  // for use for download icon 
+var name_Icon; // for use for download icon
 
 function MultiSelect(obj) {
-  name_Icon = obj.getElementsByTagName("small")[2].innerHTML
-  
+  name_Icon = obj.getElementsByTagName("small")[2].innerHTML;
+
   if (
     document.getElementById("button_MultiSelect1").classList.contains("bg-Gray")
   ) {
@@ -456,18 +461,29 @@ function MultiSelect(obj) {
   svgcode.getElementsByTagName("svg")[0].style.height =
     document.getElementById("showSize").innerHTML;
 
-  var copysvg = $(svgcode).clone()[0];
+  var NewCopySvg = $(svgcode).clone()[0];
+  var paths = NewCopySvg.firstChild.nextSibling.getElementsByTagName("path");
+
+  for (let s = 0; s < paths.length; s++) {
+    if (paths[s].classList.contains("defult-fill")) {
+      var Num1 = Number(".7");
+      var Num2 = parseFloat(paths[s].getAttribute("stroke-width"));
+      var RealNum = Num2 - Num1;
+      paths[s].removeAttribute("stroke-width");
+      paths[s].setAttribute("stroke-width", RealNum);
+    }
+  }
 
   svgcode.getElementsByTagName("svg")[0].style.width = null;
   svgcode.getElementsByTagName("svg")[0].style.height = null;
 
-  copysvg.getElementsByTagName("svg")[0].removeAttribute("id");
-  copysvg.getElementsByTagName("svg")[0].removeAttribute("class");
-  copysvg.getElementsByTagName("path")[0].removeAttribute("id");
-  copysvg.getElementsByTagName("path")[0].removeAttribute("class");
+  NewCopySvg.getElementsByTagName("svg")[0].removeAttribute("id");
+  NewCopySvg.getElementsByTagName("svg")[0].removeAttribute("class");
+  NewCopySvg.getElementsByTagName("path")[0].removeAttribute("id");
+  NewCopySvg.getElementsByTagName("path")[0].removeAttribute("class");
 
   document.getElementById("Component_Code").innerHTML = htmlEntities(
-    copysvg.innerHTML.toString()
+    NewCopySvg.innerHTML.toString()
   );
 }
 
@@ -1014,6 +1030,11 @@ function SetColorToIcons(obj) {
   for (let i = 0; i < Items.length; i++) {
     if (Items[i].getAttribute("stroke")) {
       Items[i].setAttribute("stroke", text);
+
+      if (Items[i].getAttribute("fill") !== "transparent") {
+        Items[i].removeAttribute("fill");
+        Items[i].setAttribute("fill", text);
+      }
     } else {
       if (Items[i].classList.contains("Icon-Colorful")) {
       } else {
@@ -1194,22 +1215,15 @@ for (let s = 0; s < Items.length; s++) {
     .getElementsByTagName("path");
 
   for (let j = 0; j < path.length; j++) {
-      path[j].setAttribute("stroke", "#56566F");
-      path[j].setAttribute("stroke-width", ".5px");
+    path[j].setAttribute("stroke", "#56566F");
+    path[j].setAttribute("stroke-width", ".5px");
 
-
-      if(path[j].classList.contains("defult-fill"))
-      {
-        path[j].setAttribute("stroke-width", "1.2px");
-      }
-      else
-      {
-        path[j].setAttribute("fill", "#56566F");
-      }
-    
-    
-      }
-  
+    if (path[j].classList.contains("defult-fill")) {
+      path[j].setAttribute("stroke-width", "1.2px");
+    } else {
+      path[j].setAttribute("fill", "#56566F");
+    }
+  }
 }
 
 function ChangeStroke() {
@@ -1231,21 +1245,16 @@ function ChangeStroke() {
     for (let j = 0; j < path.length; j++) {
       path[j].setAttribute("stroke", color);
       path[j].setAttribute("stroke-width", input.value);
-      
+
       var Num1 = Number(".7");
       var Num2 = Number(input.value.toString());
 
-        if(path[j].classList.contains("defult-fill"))
-        {
-          var Sum = Num2 + Num1;
-          path[j].setAttribute("stroke-width", Sum);
-        }
-        else
-        {
+      if (path[j].classList.contains("defult-fill")) {
+        var Sum = Num2 + Num1;
+        path[j].setAttribute("stroke-width", Sum);
+      } else {
         path[j].setAttribute("fill", color);
-        }
-    
-
+      }
     }
   }
 
@@ -1285,25 +1294,6 @@ function ChangeStroke() {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function resetForm() {
   var Items = document.getElementsByClassName("Icon_Pack");
@@ -1355,14 +1345,10 @@ function resetForm() {
       path[j].setAttribute("stroke", color);
       path[j].setAttribute("stroke-width", ".5");
 
-      if(path[j].classList.contains("defult-fill"))
-      {
+      if (path[j].classList.contains("defult-fill")) {
         path[j].setAttribute("stroke-width", "1.2");
-      }
-      else
-      {
+      } else {
         path[j].setAttribute("fill", color);
-
       }
     }
   }
@@ -1611,26 +1597,24 @@ function DownloadSvgAsZip(zip, getCount, name) {
   }
 }
 
+// Start Set Color To Black Fro First Time
 
- // Start Set Color To Black Fro First Time 
+var path = document.getElementsByTagName("path");
 
- var path = document.getElementsByTagName("path");
-
- for (let i = 0; i < path.length; i++) {
-   if (path[i].getAttribute("stroke")) {
-     path[i].setAttribute("stroke", "#56566F");
-     if (path[i].getAttribute("fill") !== "transparent") {
-       path[i].setAttribute("fill", "#56566F");
-     }
-   } else {
-     if (path[i].classList.contains("Icon-Colorful")) {
-     } else {
-       path[i].setAttribute("fill", "#56566F");
-     }
-   }
- }
- // End Set Color To Black Fro First Time 
-
+for (let i = 0; i < path.length; i++) {
+  if (path[i].getAttribute("stroke")) {
+    path[i].setAttribute("stroke", "#56566F");
+    if (path[i].getAttribute("fill") !== "transparent") {
+      path[i].setAttribute("fill", "#56566F");
+    }
+  } else {
+    if (path[i].classList.contains("Icon-Colorful")) {
+    } else {
+      path[i].setAttribute("fill", "#56566F");
+    }
+  }
+}
+// End Set Color To Black Fro First Time
 
 // Start Change Theme Index.html
 var count1 = 0;
